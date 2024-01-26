@@ -19,10 +19,10 @@ in_menu: true
             <img class="slide-img" src="images/pexels-rdne-stock-project-7915575.jpg">
 
             <input class="slide-input" id="slide-dot-2" type="radio" name="slides">
-            <img class="slide-img" src="https://www.codeur.com/tuto/wp-content/uploads/2021/12/slide2.jpg">
+            <img class="slide-img" src="images/pexels-rdne-stock-project-7915237.jpg">
 
             <input class="slide-input" id="slide-dot-3" type="radio" name="slides">
-            <img class="slide-img" src="https://www.codeur.com/tuto/wp-content/uploads/2021/12/slide3.jpg">
+            <img class="slide-img" src="images/pexels-rdne-stock-project-7915493.jpg">
 
         </div>
     </body>
