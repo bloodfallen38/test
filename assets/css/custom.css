@@ -53,5 +53,12 @@ img {
     transition: left 0.65s ease-out;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
 
+h1{
+  text-align: center;
+  font-family: 'Honk', serif;
+  font-size: 2.5em;
+  color: red;
+}
 
