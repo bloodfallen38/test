@@ -1,4 +1,21 @@
 
+h2 {
+  color: red;
+}
+
+
+
+h1 {
+  text-align: center;
+  font-family: 'Kavoon', sans-serif;
+  font-size: 2.5em;
+  color: white;
+}
+
+:root {
+    --couleur-primaire : black;
+}
+
 
 html, body { 
   width: 100%;
