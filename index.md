@@ -9,7 +9,7 @@ in_menu: true
 
 <section class="carousel" aria-label="Gallery">
   <ol class="carousel__viewport">
-<img src=({% link images/pexels-ron-lach-7849515.jpg %})>
+<img src= link images/pexels-ron-lach-7849515.jpg>
     <li id="carousel__slide1"
         tabindex="0"
         class="carousel__slide">
