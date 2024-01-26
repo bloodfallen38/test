@@ -8,7 +8,7 @@ in_menu: true
 <p>This carousel is created with HTML and CSS only.</p>
 
 <section class="carousel" aria-label="Gallery">
-  <ol class="carousel__viewport">
+  <ol class="carousel__viewport">![Texte décrivant l'image]({% link images/pexels-ron-lach-7849515.jpg %})
     <li id="carousel__slide1"
         tabindex="0"
         class="carousel__slide">
