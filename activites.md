@@ -1,17 +1,47 @@
 ---
-title: Activités
+title: "Activités"
 order: 1
+in_menu: true
 ---
+<css-doodle>
+  <style>
+    @grid: 50x1 / 50vmin;
+    :container {
+      perspective: 23vmin;
+    }
+    background: @m(
+      @r(200, 240), 
+      radial-gradient(
+        @p(#00b8a9, #f8f3d4, #f6416c, #ffde7d) 15%,
+        transparent 50%
+      ) @r(100%) @r(100%) / @r(1%, 3%) @lr no-repeat
+    );
 
-L’association cherche à œuvrer en collaboration avec des organismes publics, des organisations privées et des individus.
+    @size: 80%;
+    @place-cell: center;
 
-## Nos activités
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    animation: scale-up 20s linear infinite;
+    animation-delay: calc(@i * -.4s);
 
-A titre indicatif, les activités commerciales possibles sont (liste non-exhaustive) :
-
-- Accompagnement à la **création de structures** juridiques
-- Conception, développement et accompagnement de **produits innovants**
-- **Formation** d’enfants et d’adultes, par exemple dans les domaines de la communication non-violente, méthodologie lean et approche agile, les relations aux animaux, l’alimentation, la gestion de budget familial ou d’entreprise…
-- Projets à **impact environnemental positif**
-- Projets à **impact social positif**
-- Vente d’objets ou de denrées alimentaires, avec **impact humain ou environnemental positif**
+    @keyframes scale-up {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0) rotate(0);
+      }
+      10% { 
+        opacity: 1; 
+      }
+      95% {
+        transform:
+          translate3d(0, 0, @r(50vmin, 55vmin))
+          rotate(@r(-360deg, 360deg));
+      }
+      100% {
+        opacity: 0;
+        transform: translate3d(0, 0, 1vmin);
+      }
+    }
+  </style>
+</css-doodle> 
