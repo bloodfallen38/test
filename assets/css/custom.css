@@ -57,7 +57,7 @@ img {
 
 h1{
   text-align: center;
-  font-family: 'Honk', serif;
+  font-family: 'Honk', system-ui;
   font-size: 2.5em;
   color: red;
 }
