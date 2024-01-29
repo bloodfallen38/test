@@ -10,9 +10,8 @@ preload="auto"
 autoplay
 poster="http://www.alex-bernardini.fr/videos/poster.jpg">
 
-<source src="http://www.alex-bernardini.fr/videos/Wildlife.mp4" type="video/mp4" />
-<source src="http://www.alex-bernardini.fr/videos/Wildlife.webm" type="video/webm" />
-<source src="http://www.alex-bernardini.fr/videos/Wildlife.ogv" type="video/ogg" />
+<source src="https://youtu.be/2XelhDnVqQg" type="video/mp4" />
+
 
 <object type="application/x-shockwave-flash" data="dewtube.swf" width="550" height="310">
 <param name="allowFullScreen" value="true" />
