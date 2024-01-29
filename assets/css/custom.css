@@ -1,8 +1,4 @@
 
-:root{
-  --machine-width: 320px;
-  
-  --slot-dimension: calc(var(--machine-width) /3);
   
   --spin-steps: steps(5);
   
@@ -43,21 +39,8 @@
   content: '';
 }
 
-body{
-  perspective: 600px;
-  background: var(--rgba-mix-bg);
-  overflow: hidden;
 }
 
-body,
-.perspective{  
-  width: 100vw; height: 100vh;
-  color: var(--rgba-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column-reverse;
-}
 
 .perspective{
   transform: var(--perspective);
@@ -65,14 +48,7 @@ body,
   min-height: 380px;
 }
 
-body:before{
-  width: 150%; height: 150%;
-  background: var(--rgba-mix-light);
-  position: fixed;
-  animation: animPulse 12s linear infinite;
-  transform-origin: top center;
-  transform: translate3d(0,0,-100px);
-}
+
 
 .wrapper{
   width: var(--machine-width); height: 220px;
@@ -110,33 +86,8 @@ body:before{
   flex-direction: column;
 }
 
-h1{
-  transform-style: preserve-3d;
-  display: flex;
-  margin-bottom: 5px;
-  animation: animFloat 5s linear infinite;
-}
 
-h1:after{
-    box-shadow:  15px 10px 0 #fce5d2, 20px 10px 0 #fce5d2, 25px 10px 0 #fce5d2, 40px 10px 0 #fce5d2, 55px 10px 0 #fce5d2, 70px 10px 0 #fce5d2, 90px 10px 0 #fce5d2, 110px 10px 0 #fce5d2, 115px 10px 0 #fce5d2, 120px 10px 0 #fce5d2, 135px 10px 0 #fce5d2, 140px 10px 0 #fce5d2, 145px 10px 0 #fce5d2, 160px 10px 0 #fce5d2, 165px 10px 0 #fce5d2, 170px 10px 0 #fce5d2, 10px 15px 0 #fce5d2, 40px 15px 0 #fce5d2, 55px 15px 0 #fce5d2, 70px 15px 0 #fce5d2, 75px 15px 0 #fce5d2, 90px 15px 0 #fce5d2, 105px 15px 0 #fce5d2, 135px 15px 0 #fce5d2, 165px 15px 0 #fce5d2, 15px 20px 0 #fce5d2, 20px 20px 0 #fce5d2, 40px 20px 0 #fce5d2, 55px 20px 0 #fce5d2, 70px 20px 0 #fce5d2, 80px 20px 0 #fce5d2, 90px 20px 0 #fce5d2, 110px 20px 0 #fce5d2, 115px 20px 0 #fce5d2, 135px 20px 0 #fce5d2, 140px 20px 0 #fce5d2, 145px 20px 0 #fce5d2, 165px 20px 0 #fce5d2, 25px 25px 0 #fce5d2, 40px 25px 0 #fce5d2, 55px 25px 0 #fce5d2, 70px 25px 0 #fce5d2, 85px 25px 0 #fce5d2, 90px 25px 0 #fce5d2, 120px 25px 0 #fce5d2, 135px 25px 0 #fce5d2, 165px 25px 0 #fce5d2, 10px 30px 0 #fce5d2, 15px 30px 0 #fce5d2, 20px 30px 0 #fce5d2, 45px 30px 0 #fce5d2, 50px 30px 0 #fce5d2, 70px 30px 0 #fce5d2, 90px 30px 0 #fce5d2, 105px 30px 0 #fce5d2, 110px 30px 0 #fce5d2, 115px 30px 0 #fce5d2, 135px 30px 0 #fce5d2, 140px 30px 0 #fce5d2, 145px 30px 0 #fce5d2, 165px 30px 0 #fce5d2;
-  width: 5px; 
-  height: 5px;
-  transform: scale(.55) skewY(-3deg) translate3d(-80px, -30px, 0);
-}
 
-h2{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 55px;
-}
-
-h2:after{
-  box-shadow:  40px 40px 0 #ffffff, 60px 40px 0 #ffffff, 180px 40px 0 #ffffff, 200px 40px 0 #ffffff, 220px 40px 0 #ffffff, 320px 40px 0 #ffffff, 340px 40px 0 #ffffff, 360px 40px 0 #ffffff, 520px 40px 0 #ffffff, 540px 40px 0 #ffffff, 560px 40px 0 #ffffff, 640px 40px 0 #ffffff, 780px 40px 0 #ffffff, 800px 40px 0 #ffffff, 900px 40px 0 #ffffff, 920px 40px 0 #ffffff, 940px 40px 0 #ffffff, 1040px 40px 0 #ffffff, 1060px 40px 0 #ffffff, 1080px 40px 0 #ffffff, 20px 60px 0 #ffffff, 80px 60px 0 #ffffff, 160px 60px 0 #ffffff, 300px 60px 0 #ffffff, 500px 60px 0 #ffffff, 640px 60px 0 #ffffff, 760px 60px 0 #ffffff, 820px 60px 0 #ffffff, 920px 60px 0 #ffffff, 1020px 60px 0 #ffffff, 20px 80px 0 #ffffff, 180px 80px 0 #ffffff, 200px 80px 0 #ffffff, 320px 80px 0 #ffffff, 340px 80px 0 #ffffff, 520px 80px 0 #ffffff, 540px 80px 0 #ffffff, 640px 80px 0 #ffffff, 760px 80px 0 #ffffff, 820px 80px 0 #ffffff, 920px 80px 0 #ffffff, 1040px 80px 0 #ffffff, 1060px 80px 0 #ffffff, 20px 100px 0 #ffffff, 80px 100px 0 #ffffff, 220px 100px 0 #ffffff, 360px 100px 0 #ffffff, 560px 100px 0 #ffffff, 640px 100px 0 #ffffff, 760px 100px 0 #ffffff, 820px 100px 0 #ffffff, 920px 100px 0 #ffffff, 1080px 100px 0 #ffffff, 40px 120px 0 #ffffff, 60px 120px 0 #ffffff, 160px 120px 0 #ffffff, 180px 120px 0 #ffffff, 200px 120px 0 #ffffff, 300px 120px 0 #ffffff, 320px 120px 0 #ffffff, 340px 120px 0 #ffffff, 500px 120px 0 #ffffff, 520px 120px 0 #ffffff, 540px 120px 0 #ffffff, 640px 120px 0 #ffffff, 660px 120px 0 #ffffff, 680px 120px 0 #ffffff, 780px 120px 0 #ffffff, 800px 120px 0 #ffffff, 920px 120px 0 #ffffff, 1020px 120px 0 #ffffff, 1040px 120px 0 #ffffff, 1060px 120px 0 #ffffff;
-  width: 20px; 
-  height: 20px;
-  transform: scale(.2) translateX(-540px);
-}
 
 .slot{
   width: var(--slot-dimension);
