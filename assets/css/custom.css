@@ -7,308 +7,1233 @@ h3 {
   color: white;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Lato:900|Creepster);
-html {
-
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  background: #000000;
-
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(68%, #000000), color-stop(75%, #ff0000), color-stop(81%, #cccccc), color-stop(81%, #cccccc), color-stop(91%, #111111), color-stop(95%, #000000), color-stop(95%, #000000));
-  background: -webkit-linear-gradient(-45deg, #000000 68%, #ff0000 75%, #cccccc 81%, #cccccc 81%, #111111 91%, #000000 95%, #000000 95%);
-  background: -webkit-linear-gradient(315deg, #000000 68%, #ff0000 75%, #cccccc 81%, #cccccc 81%, #111111 91%, #000000 95%, #000000 95%);
-  background: linear-gradient(135deg, #000000 68%, #ff0000 75%, #cccccc 81%, #cccccc 81%, #111111 91%, #000000 95%, #000000 95%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1 );
-  
-/* IE6-9 fallback on horizontal gradient */
 
 
-}
-body {
-  width: 100%;
-  height: 100%;
-  background: -webkit-repeating-linear-gradient(103deg, #ff0000, rgba(255, 0, 0, 0.7) 1px, #ff0000 2px, transparent 6px, transparent 150px);
-  background: repeating-linear-gradient(-13deg, #ff0000, rgba(255, 255, 255, 0.7) 1px, #ff0000 2px, transparent 6px, transparent 150px);
-  margin: 0;
-}
-.grid {
-  width: 100%;
-  height: 100%;
-  background: -webkit-repeating-linear-gradient(45deg, #ff0000, rgba(255, 0, 0, 0.7) 1px, #ff0000 2px, transparent 6px, transparent 150px);
-  background: repeating-linear-gradient(45deg, #ff0000, rgba(255, 255, 255, 0.7) 1px, #ff0000 2px, transparent 6px, transparent 150px);
-}
-.Absolute-Center {
-  margin: auto;
+input {
   position: absolute;
+  left: -9999px;
+}
+
+body {
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+  counter-reset: score 0 comp 1;
+  width: 100%;
+  height: 100%;
+}
+
+.stage {
+  -webkit-perspective: 3000;
+  perspective: 3000;
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 53%;
+  margin-top: -150px;
+  margin-left: -292px;
+  position: fixed;
+  -webkit-transition: -webkit-perspective 1s;
+  transition: perspective 1s;
+}
+
+#important {
+  display: none;
+}
+
+/*----------------------
+タイトルの設定
+----------------------*/
+
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #333;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
 }
-.container {
-  position: relative;
-  width: 500px;
-  margin: auto;
+
+.text {
   text-align: center;
-  padding-top: 10%;
+  font-size: 34px;
+  pointer-events: none;
 }
 
-/* counter-reset  */
+.text:before {
+  content: "Pure CSS Game";
+}
 
-body {
-  counter-reset: littledevil 0;
-  -webkit-touch-callout: none;
+.text:after {
+  content: "- Bycss -";
+  position: relative;
+  right: -20px;
+}
+
+.start {
+  position: absolute;
+  display: block;
+  font-size: 54px;
+  text-align: center;
+  bottom: 50px;
+  -webkit-animation: st 1.6s linear 0s infinite alternate;
+  animation: st 1.6s linear 0s infinite alternate;
+  cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  overflow: hidden;
   width: 100%;
-  height: 100%;
-  margin: 0;
+  height: calc(100% - 320px);
 }
-/*hide checkbox*/
-input {
-  position: fixed;
-  left: -10px;
-  top: -10px;
+
+@-webkit-keyframes st {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
-/*play area*/
-.wrapper {
-  height: 100%;
-  width: 100%;
+
+@keyframes st {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.start:before {
+  content: "CLICK to START";
   position: absolute;
-  cursor: crosshair;
-}
-/*count dead minions*/
-.input-demon:checked {
-  counter-increment: littledevil;
-}
-.sum {
-  position: fixed;
   width: 100%;
-  text-align: center;
-  bottom: 30px;
-  height: auto;
-  font-size: 18px;
-  font-weight: bold;
-  font-family: Lato;
-  color: #fff;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+  height: 100%;
+  top: 50%;
+  left: 0%;
 }
-/*print to screen dead minion total*/
-.sum:after {
-  content: counter(littledevil);
-}
-.input-demon ~ .minion {
+
+#start:checked ~ .background {
+  pointer-events: none;
   opacity: 0;
-  -webkit-transition: 0.3s cubic-bezier(0, .43, 1, 0);
-  transition: 0.3s cubic-bezier(0, .43, 1, 0);
-  -webkit-animation: move 8s infinite alternate;
-  animation: move 8s infinite alternate;
 }
-.input-demon1:not(:checked) ~ .minion1, .input-demon2:not(:checked) ~ .minion2, .input-demon3:not(:checked) ~ .minion3, .input-demon4:not(:checked) ~ .minion4, .input-demon5:not(:checked) ~ .minion5, .input-demon6:not(:checked) ~ .minion6, .input-demon7:not(:checked) ~ .minion7, .input-demon8:not(:checked) ~ .minion8 {
+
+.logo {
+  position: relative;
+  display: block;
+  width: 600px;
+  height: 240px;
+  margin: 40px auto 20px auto;
+  pointer-events: none;
+}
+
+.b1 {
+  position: absolute;
+  background-color: #333;
+  width: 60px;
+  height: 20px;
+  top: 0px;
+  left: 0px;
+}
+
+.b2 {
+  position: absolute;
+  background-color: #333;
+  width: 20px;
+  height: 60px;
+  top: 40px;
+  left: 80px;
+}
+
+.b3 {
+  position: absolute;
+  background-color: #333;
+  width: 20px;
+  height: 60px;
+  top: 120px;
+  left: 100px;
+}
+
+.b4 {
+  position: absolute;
+  background-color: #333;
+  width: 20px;
+  height: 120px;
+  top: 20px;
+  left: 0px;
+}
+
+.b5 {
+  position: absolute;
+  background-color: #333;
+  width: 40px;
+  height: 20px;
+  top: 80px;
+  left: 40px;
+}
+
+.b6 {
+  position: absolute;
+  background-color: #333;
+  width: 60px;
+  height: 20px;
+  top: 160px;
+  left: 40px;
+}
+
+.y1 {
+  position: absolute;
+  background-color: #333;
+  width: 20px;
+  height: 60px;
+  top: 80px;
+  left: 140px;
+}
+
+.y2 {
+  position: absolute;
+  background-color: #333;
+  width: 20px;
+  height: 160px;
+  top: 80px;
+  left: 220px;
+}
+
+.y3 {
+  position: absolute;
+  background-color: #333;
+  width: 40px;
+  height: 20px;
+  top: 160px;
+  left: 180px;
+}
+
+.y4 {
+  position: absolute;
+  background-color: #333;
+  width: 60px;
+  height: 20px;
+  top: 220px;
+  left: 160px;
+}
+
+.c1 {
+  position: absolute;
+  background-color: #333;
+  width: 80px;
+  height: 20px;
+  top: 60px;
+  left: 260px;
+}
+
+.c2 {
+  position: absolute;
+  background-color: #333;
+  width: 20px;
+  height: 60px;
+  top: 80px;
+  left: 260px;
+}
+
+.c3 {
+  position: absolute;
+  background-color: #333;
+  width: 40px;
+  height: 20px;
+  top: 160px;
+  left: 300px;
+}
+
+.sa1, .sb1 {
+  position: absolute;
+  background-color: #333;
+  width: 80px;
+  height: 20px;
+  top: 60px;
+}
+
+.sa1 {
+  left: 380px;
+}
+
+.sb1 {
+  left: 500px;
+}
+
+.sa2, .sb2 {
+  position: absolute;
+  background-color: #333;
+  width: 80px;
+  height: 20px;
+  top: 160px;
+}
+
+.sa2 {
+  left: 400px;
+}
+
+.sb2 {
+  left: 520px;
+}
+
+.sa3, .sb3 {
+  position: absolute;
+  background-color: #333;
+  width: 20px;
+  height: 40px;
+  top: 80px;
+}
+
+.sa3 {
+  left: 380px;
+}
+
+.sb3 {
+  left: 500px;
+}
+
+.sa4, .sb4 {
+  position: absolute;
+  background-color: #333;
+  width: 20px;
+  height: 40px;
+  top: 120px;
+}
+
+.sa4 {
+  left: 460px;
+}
+
+.sb4 {
+  left: 580px;
+}
+
+.sa5, .sb5 {
+  position: absolute;
+  background-color: #333;
+  width: 40px;
+  height: 40px;
+  top: 100px;
+}
+
+.sa5 {
+  left: 410px;
+}
+
+.sb5 {
+  left: 530px;
+}
+
+.sa5:after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  border: solid 10px white;
+}
+
+.b1:after,
+.c1:after,
+.c3:before,
+.sa1:after,
+.sb1:after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  border-top: solid 10px transparent;
+  border-right: solid 10px transparent;
+  border-left: solid 10px #333;
+  border-bottom: solid 10px #333;
+}
+
+.b2:after,
+.b3:after,
+.y1:before,
+.y2:after,
+.sa4:after,
+.sb4:after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  border-top: solid 10px transparent;
+  border-right: solid 10px transparent;
+  border-left: solid 10px #333;
+  border-bottom: solid 10px #333;
+}
+
+
+.b4:after,
+.y1:after,
+.c2:after,
+.sa3:after,
+.sb3:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  border-top: solid 10px #333;
+  border-right: solid 10px #333;
+  border-left: solid 10px transparent;
+  border-bottom: solid 10px transparent;
+}
+
+.b5:after,
+.b6:after,
+.y3:after,
+.y4:after,
+.c3:after,
+.sa2:after,
+.sb2:after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  border-top: solid 10px #333;
+  border-right: solid 10px #333;
+  border-left: solid 10px transparent;
+  border-bottom: solid 10px transparent;
+}
+
+/*----------------------
+ゲームスタート演出
+----------------------*/
+
+input[id="start"]:checked ~ .stage .mode {
+  pointer-events: auto;
   opacity: 1;
 }
-.input-demon1:checked ~ .minion1 span, .input-demon2:checked ~ .minion2 span, .input-demon3:checked ~ .minion3 span, .input-demon4:checked ~ .minion4 span, .input-demon5:checked ~ .minion5 span, .input-demon6:checked ~ .minion6, .input-demon7:checked ~ .minion7 span, .input-demon8:checked ~ .minion8 span {
+
+.mode {
+  opacity: 0;
+  pointer-events: none;
+  font-size: 50px;
+  text-align: center;
+  position: absolute;
+  height: 250px;
+  width: 600px;
+  -webkit-transform: translateZ(53px);
+  transform: translateZ(53px);
+  top: 0;
+  left: -50px;
+  z-index: 1;
+  background-color: #FFF;
+  background-image:
+    -webkit-linear-gradient(#269 2px, transparent 0px), -webkit-linear-gradient(0deg, #269 3px, transparent 0px);
+  background-image:
+    linear-gradient(#269 2px, transparent 0px),
+    linear-gradient(90deg, #269 3px, transparent 0px);
+  background-size: 600px 250px, 600px 250px;
+  background-position: 0px -1px, -1px 0px;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.mode:before {
+  content: "MODE SELECT";
+}
+
+.mode_co {
+  font-size: 40px;
   display: block;
+  color: #999;
+  margin-top: 20px;
+  cursor: pointer;
 }
-/*----------- 
-Flying Minions */
 
+.mode_co:hover {
+  color: #B23;
+}
 
-.minion {
+.mode_co:hover:before {
+  content: "- ";
+  color: #269;
+}
+
+.mode_co:hover:after {
+  content: " -";
+  color: #269;
+}
+
+.mode_re {
+  font-size: 40px;
+  display: block;
+  color: #999;
+  margin-top: 14px;
+  cursor: pointer;
+}
+
+.mode_re:hover {
+  color: #333;
+}
+
+.mode_re:hover:before {
+  content: "- ";
+  color: #333;
+}
+
+.mode_re:hover:after {
+  content: " -";
+  color: #333;
+}
+
+#mode_color:checked ~ .stage .mode .mode_co {
+  -webkit-animation: tenmetsu 0.12s linear 0s 6 alternate;
+  animation: tenmetsu 0.12s linear 0s 6 alternate;
+  color: #B23;
+}
+
+#mode_retro:checked ~ .stage .mode .mode_re {
+  -webkit-animation: tenmetsu 0.12s linear 0s 6 alternate;
+  animation: tenmetsu 0.12s linear 0s 6 alternate;
+  color: #333;
+}
+
+#mode_color:checked ~ .stage .mode .mode_co:before {
+  content: "- ";
+  color: #269;
+}
+
+#mode_color:checked ~ .stage .mode .mode_co:after {
+  content: " -";
+  color: #269;
+}
+
+#mode_retro:checked ~ .stage .mode .mode_re:before {
+  content: "- ";
+  color: #333;
+}
+
+#mode_retro:checked ~ .stage .mode .mode_re:after {
+  content: " -";
+  color: #333;
+}
+
+@-webkit-keyframes tenmetsu {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes tenmetsu {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#mode_color:checked ~ .stage .mode,
+#mode_retro:checked ~ .stage .mode {
+  pointer-events: none;
+  -webkit-animation: tenmetsu 0.3s linear 1s 1 alternate;
+  animation: tenmetsu 0.3s linear 1s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+#mode_color:checked ~ .stage .futa2,
+#mode_retro:checked ~ .stage .futa2 {
+  pointer-events: none;
+  -webkit-animation: tenmetsu 0.6s linear 1.5s 1 alternate;
+  animation: tenmetsu 0.6s linear 1.5s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+#mode_color:checked ~ .stage .futa1,
+#mode_retro:checked ~ .stage .futa1 {
+  pointer-events: none;
+  -webkit-animation: tenmetsu 1s linear 3s 1 alternate;
+  animation: tenmetsu 1s linear 3s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+#mode_color:checked ~ .stage,
+#mode_retro:checked ~ .stage {
+  -webkit-animation: pers 1.8s ease 3s 1 alternate;
+  animation: pers 1.8s ease 3s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes pers {
+  0% {
+    -webkit-perspective: 3000;
+    perspective: 3000;
+  }
+  60% {
+    -webkit-perspective: 180;
+    perspective: 180;
+  }
+  100% {
+    -webkit-perspective: 200;
+    perspective: 200;
+  }
+}
+
+@keyframes pers {
+  0% {
+    -webkit-perspective: 3000;
+    perspective: 3000;
+  }
+  60% {
+    -webkit-perspective: 180;
+    perspective: 180;
+  }
+  100% {
+    -webkit-perspective: 200;
+    perspective: 200;
+  }
+}
+
+input[id="mode_color"]:checked ~ .stage .UI div[class*="UI-move"],
+input[id="mode_retro"]:checked ~ .stage .UI div[class*="UI-move"] {
+  -webkit-animation: ui 1s ease 3s 1 alternate;
+  animation: ui 1s ease 3s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes ui {
+  0% {
+    -webkit-transform: translateZ(-10px);
+    transform: translateZ(-10px);
+  }
+  100% {
+    -webkit-transform: translateZ(0px);
+    transform: translateZ(0px);
+  }
+}
+
+@keyframes ui {
+  0% {
+    -webkit-transform: translateZ(-10px);
+    transform: translateZ(-10px);
+  }
+  100% {
+    -webkit-transform: translateZ(0px);
+    transform: translateZ(0px);
+  }
+}
+
+.futa1 {
   position: absolute;
-  left: 0;
-  cursor: crosshair;
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/191814/devil_compressed.gif);
-  width: 191px;
-  height: 144px;
-  z-index: 2;
-}
-.minion>span {
-  display: none;
-  position: absolute;
-  z-index: 2;
-  text-align: center;
-  color: rgba(255,252,252,0.5);
-  font-weight: bolder;
-  width: 100px;
-  height: 100px;
-}
-.minion>span:before {
-  content: "☠";
-  font-size: 150px;
-}
-/* Uncomment and add your minions for targeted content messages.  
-
-.minion1>span:before {
-  content: "Can't Kill the Dead";
-
-*/
-
-
-.minion1 {
-  top: 10%;
-  -webkit-animation-delay: -2s!important;
-  animation-delay: -2s!important;
-  -webkit-transform: scale(0.9);
-  -ms-transform: scale(0.9);
-  transform: scale(0.9);
-}
-.minion2 {
-  top: 20%;
-  -webkit-animation-delay: -4s!important;
-  animation-delay: -4s!important;
-  -webkit-transform: scale(0.8);
-  -ms-transform: scale(0.8);
-  transform: scale(0.8);
-}
-.minion3 {
-  top: 30%;
-  -webkit-animation-delay: -3s!important;
-  animation-delay: -3s!important;
-  -webkit-transform: scale(1.25);
-  -ms-transform: scale(1.25);
-  transform: scale(1.25);
-}
-.minion4 {
-  top: 40%;
-  -webkit-animation-delay: -8s!important;
-  animation-delay: -8s!important;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-.minion5 {
-  top: 50%;
-  -webkit-animation-delay: -16s!important;
-  animation-delay: -16s!important;
-  -webkit-transform: scale(0.9);
-  -ms-transform: scale(0.9);
-  transform: scale(0.9);
-}
-.minion6 {
-  top: 60%;
-  -webkit-animation-delay: -9s!important;
-  animation-delay: -9s!important;
-  -webkit-transform: scale(1.3);
-  -ms-transform: scale(1.3);
-  transform: scale(1.3);
-}
-.minion7 {
-  top: 70%;
-  -webkit-animation-delay: -6s!important;
-  animation-delay: -6s!important;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-.minion8 {
-  top: 80%;
-  -webkit-animation-delay: -12s!important;
-  animation-delay: -12s!important;
-  -webkit-transform: scale(0.7);
-  -ms-transform: scale(0.7);
-  transform: scale(0.7);
-}
- @-webkit-keyframes move {
-0% {
-left:0%;
-}
-20% {
-left:20%;
-top:50%;
-}
-40% {
-top:30%;
-left:60%;
-}
-60% {
-top:80%;
-left:80%;
-}
-80% {
-top:10%;
-left:20%;
-}
-100% {
-top:30%;
-left:20%;
-}
-}
- @keyframes move {
-0% {
-left:0%;
-}
-20% {
-left:20%;
-top:50%;
-}
-40% {
-top:30%;
-left:60%;
-}
-60% {
-top:80%;
-left:80%;
-}
-80% {
-top:10%;
-left:20%;
-}
-100% {
-top:30%;
-left:20%;
-}
-}
-/* Page Stying  */
-h1  {
-    z-index: 1;
-  font-size: 10vw;
-  color: #ff0000;
-  padding-top: 25%;
-  font-family: 'Creepster', cursive;
-  letter-spacing: 10px;
-  text-shadow: 5px 3px 0px #000;
-  margin: auto;
-  position: absolute;
+  height: 300px;
+  width: 300px;
+  -webkit-transform: translateZ(53px);
+  transform: translateZ(53px);
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
-  -webkit-transform: rotate(-13deg);
-  -ms-transform: rotate(-13deg);
-  transform: rotate(-13deg);
-  text-align: center;
-  width: 100%;
-  letter-spacing: 10px;
-  -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: black;
+  z-index: 1;
+  background-color: #FFF;
+  background-image:
+    -webkit-linear-gradient(#269 2px, transparent 0px), -webkit-linear-gradient(0deg, #269 2px, transparent 0px);
+  background-image:
+    linear-gradient(#269 2px, transparent 0px),
+    linear-gradient(90deg, #269 2px, transparent 0px);
+  background-size: 100px 100px, 100px 100px;
+  background-position: 0px -1px, -1px 0px;
 }
 
-h2  {
-    z-index: 2;
-  font-size: 7vw;
-  color: grey;
-  padding-left:17%;
-  padding-top: 45%;
-  font-family: 'Creepster', cursive;
-  letter-spacing: 10px;
-  text-shadow: 5px 3px 0px #000;
-  margin: auto;
+.futa2 {
   position: absolute;
+  height: 300px;
+  width: 600px;
+  -webkit-transform: translateZ(53px);
+  transform: translateZ(53px);
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-  width: 100%;
-  letter-spacing: 10px;
-  -webkit-text-stroke-width: 1px;
-   -webkit-text-stroke-color: black;
+  z-index: 1;
+  background-color: #FFF;
+  background-image:
+    -webkit-linear-gradient(#269 2px, transparent 0px), -webkit-linear-gradient(0deg, #269 2px, transparent 0px);
+  background-image:
+    linear-gradient(#269 2px, transparent 0px),
+    linear-gradient(90deg, #269 2px, transparent 0px);
+  background-size: 50px 50px, 50px 50px;
+  background-position: 0px -1px, -1px 0px;
 }
+
+/*----------------------
+セレクタの設定
+----------------------*/
+
+label[class*="select"] {
+  height: 96px;
+  width: 96px;
+  opacity: 0;
+  pointer-events: none;
+  display: block;
+  position: absolute;
+  -webkit-transform: translateZ(50px);
+  transform: translateZ(50px);
+  border: solid 2px transparent;
+  -webkit-transition: border 0.1s, background-color 0.1s, opacity 0.3s;
+  transition: border 0.1s, background-color 0.1s, opacity 0.3s;
+}
+
+label[class*="select"]:before {
+  content: "";
+  position: absolute;
+  width: 96px;
+  height: 98px;
+  left: -2px;
+  border-left: solid 2px transparent;
+  border-top: solid 2px transparent;
+  border-right: solid 2px transparent;
+  border-bottom: solid 2px transparent;
+  pointer-events: none;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+label[class*="select"][class*="B-lg"]:before,
+label[class*="select"][class*="B-wd"]:before,
+label[class*="select"][class*="B-el"]:before {
+  top: -102px;
+}
+
+label[class*="select"][class*="B-rv"]:before {
+  top: 96px;
+}
+
+label[class*="select"]:after {
+  content: "";
+  position: absolute;
+  width: 98px;
+  height: 96px;
+  top: -2px;
+  border-left: solid 2px transparent;
+  border-top: solid 2px transparent;
+  border-right: solid 2px transparent;
+  border-bottom: solid 2px transparent;
+  pointer-events: none;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+label[class*="select"][class*="B-lg"]:after,
+label[class*="select"][class*="B-wd"]:after,
+label[class*="select"][class*="B-el"]:after {
+  right: -102px;
+}
+
+label[class*="select"][class*="B-rv"]:after {
+  right: 96px;
+}
+
+/* セレクタ 表示 */
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],/* ↓10 */
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],/*12*/
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],/*13*/
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],/*14*/
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],/*15*/
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],/*16*/
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],/*17*/
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],/*18*/
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],/*19*/
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],/*20*/
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],/*21*/
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],/*22*/
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],/*23*/
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],/*24*/
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],/*25*/
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],/*26*/
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],/*27*/
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+input[id*="next"][id*="B-sq"]:checked ~
+label[class*="select"][class*="B-sq"],
+/* B-lg */
+input[id*="next"][id*="B-lg"]:checked ~
+label[class*="select"][class*="B-lg"],
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+label[class*="select"][class*="B-lg"],
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+label[class*="select"][class*="B-lg"],
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+label[class*="select"][class*="B-lg"],
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+label[class*="select"][class*="B-lg"],
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+label[class*="select"][class*="B-lg"],
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+label[class*="select"][class*="B-lg"],
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+label[class*="select"][class*="B-lg"],
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+label[class*="select"][class*="B-lg"],
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+label[class*="select"][class*="B-lg"],
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+label[class*="select"][class*="B-lg"],
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+label[class*="select"][class*="B-lg"],
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="B-lg"]:checked ~
+input[id*="next"][id*="
+
