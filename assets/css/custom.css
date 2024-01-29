@@ -11,8 +11,6 @@ h2 {
   font-family: 'Honk', system-ui;
 }
 
-root {
-   color: white;
 }
 @mixin vp-anim($radius,$pname, $deg: 360deg) {
   @-webkit-keyframes rot-#{$pname} {
