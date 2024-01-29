@@ -3,42 +3,50 @@ title: "test"
 order: 4
 in_menu: true
 ---
-<div class="system">
-  <div class="sun"></div>
-  <div class="mer-path"></div>
-    <div class="mer"></div>
-  <div class="ven-path"></div>
-  <div class="ven"></div>
-  <div class="ear-path"></div>
-  <div class="ear"><div class="lune"></div></div>
-  <div class="mar-path"></div>
-  <div class="mar">
-    <div class="pho"></div>
-    <div class="dem"></div>
-  </div>
-  <div class="jup-path"></div>
-  <div class="jup">
-    <div class="spot"></div>
-    <div class="jove io"></div>
-    <div class="jove eur"></div>
-    <div class="jove gan"></div>
-    <div class="jove cal"></div>
-  </div>
-  <div class="sat-path"></div>
-  <div class="sat">
-    <div class="f-ring"></div>
-    <div class="a-ring"></div>
-    <div class="b-ring"></div>
-    <div class="c-ring"></div>
-  </div>
-  <div class="ura-path"></div>
-  <div class="ura">
-    <div class="e-ring"></div>
-  </div>
-  <div class="nep-path"></div>
-  <div class="nep">
-    <div class="spot"></div>
-  </div>
-  <div class="plu-path"></div>
-  <div class="plu"></div>
-</div> 
+<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval= "6000">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="first-slide animated zoomInUp" src="https://images5.alphacoders.com/431/431885.jpg">
+          <div class="container">
+            <div class="carousel-caption d-none d-md-block text-left">
+              <h1 class="animated fadeInDown">Example headline.</h1>
+              <p class="animated zoomInLeft">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="second-slide animated zoomInDown" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-fVv6bAGKlo6T9sqHTxjPqrkgUc_gLJt9hQZu6fKRw7LtX8zO" alt="">
+          <div class="container">
+            <div class="carousel-caption d-none d-md-block">
+              <h1 class="animated fadeInDown">Another example headline.</h1>
+              <p class="animated fadeInRight">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="third-slide animated zoomIn" src="https://www.smak.co.za/images/bg.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption d-none d-md-block text-right">
+              <h1 class="animated fadeInDown">One more for good measure.</h1>
+              <p class="animated slideInLeft">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div> 
