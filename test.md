@@ -3,46 +3,167 @@ title: "test"
 order: 4
 in_menu: true
 ---
-// Match the SCSS variables here
-- rows = 9
-- cols = 9
+<h1>Pure CSS Connect 4</h1>
+<form>
+  <div class="board">
+    <div class="field">
+      <div class="grid column">
+        <input type="radio" name="slot11" tabindex="-1" required>
+        <input type="radio" name="slot11" tabindex="-1" required>
+        <div class="disc"></div>
+        <input type="radio" name="slot12" tabindex="-1" required>
+        <input type="radio" name="slot12" tabindex="-1" required>
+        <div class="disc"></div>
+        <input type="radio" name="slot13" tabindex="-1" required>
+        <input type="radio" name="slot13" tabindex="-1" required>
+        <div class="disc"></div>
+        <input type="radio" name="slot14" tabindex="-1" required>
+        <input type="radio" name="slot14" tabindex="-1" required>
+        <div class="disc"></div>
+        <input type="radio" name="slot15" tabindex="-1" required>
+        <input type="radio" name="slot15" tabindex="-1" required>
+        <div class="disc"></div>
+        <input type="radio" name="slot16" tabindex="-1" required>
+        <input type="radio" name="slot16" tabindex="-1" required>
+        <div class="disc"></div>
 
-- count = rows * cols
+        <!--Column 1 after-->
+        <div class="column">
+          <input type="radio" name="slot21" tabindex="-1" required>
+          <input type="radio" name="slot21" tabindex="-1" required>
+          <div class="disc"></div>
+          <input type="radio" name="slot22" tabindex="-1" required>
+          <input type="radio" name="slot22" tabindex="-1" required>
+          <div class="disc"></div>
+          <input type="radio" name="slot23" tabindex="-1" required>
+          <input type="radio" name="slot23" tabindex="-1" required>
+          <div class="disc"></div>
+          <input type="radio" name="slot24" tabindex="-1" required>
+          <input type="radio" name="slot24" tabindex="-1" required>
+          <div class="disc"></div>
+          <input type="radio" name="slot25" tabindex="-1" required>
+          <input type="radio" name="slot25" tabindex="-1" required>
+          <div class="disc"></div>
+          <input type="radio" name="slot26" tabindex="-1" required>
+          <input type="radio" name="slot26" tabindex="-1" required>
+          <div class="disc"></div>
 
-%form
-	- count.times do |i|
-		%input{:type => "checkbox", :id => "c#{i+1}"}
-		%input{:type => "checkbox", :id => "f#{i+1}"}
+          <!--Column 2 after-->
+          <div class="column">
+            <input type="radio" name="slot31" tabindex="-1" required>
+            <input type="radio" name="slot31" tabindex="-1" required>
+            <div class="disc"></div>
+            <input type="radio" name="slot32" tabindex="-1" required>
+            <input type="radio" name="slot32" tabindex="-1" required>
+            <div class="disc"></div>
+            <input type="radio" name="slot33" tabindex="-1" required>
+            <input type="radio" name="slot33" tabindex="-1" required>
+            <div class="disc"></div>
+            <input type="radio" name="slot34" tabindex="-1" required>
+            <input type="radio" name="slot34" tabindex="-1" required>
+            <div class="disc"></div>
+            <input type="radio" name="slot35" tabindex="-1" required>
+            <input type="radio" name="slot35" tabindex="-1" required>
+            <div class="disc"></div>
+            <input type="radio" name="slot36" tabindex="-1" required>
+            <input type="radio" name="slot36" tabindex="-1" required>
+            <div class="disc"></div>
 
-	%input(type="radio" name="mode" id="modeMine" checked)
-	%input(type="radio" name="mode" id="modeFlag")
+            <!--Column 3 after-->
+            <div class="column">
+              <input type="radio" name="slot41" tabindex="-1" required>
+              <input type="radio" name="slot41" tabindex="-1" required>
+              <div class="disc"></div>
+              <input type="radio" name="slot42" tabindex="-1" required>
+              <input type="radio" name="slot42" tabindex="-1" required>
+              <div class="disc"></div>
+              <input type="radio" name="slot43" tabindex="-1" required>
+              <input type="radio" name="slot43" tabindex="-1" required>
+              <div class="disc"></div>
+              <input type="radio" name="slot44" tabindex="-1" required>
+              <input type="radio" name="slot44" tabindex="-1" required>
+              <div class="disc"></div>
+              <input type="radio" name="slot45" tabindex="-1" required>
+              <input type="radio" name="slot45" tabindex="-1" required>
+              <div class="disc"></div>
+              <input type="radio" name="slot46" tabindex="-1" required>
+              <input type="radio" name="slot46" tabindex="-1" required>
+              <div class="disc"></div>
 
-	.actionSelector
-		%label(for="modeMine")
-			⛏
-		%label(for="modeFlag")
-			🚩
+              <!--Column 4 after-->
+              <div class="column">
+                <input type="radio" name="slot51" tabindex="-1" required>
+                <input type="radio" name="slot51" tabindex="-1" required>
+                <div class="disc"></div>
+                <input type="radio" name="slot52" tabindex="-1" required>
+                <input type="radio" name="slot52" tabindex="-1" required>
+                <div class="disc"></div>
+                <input type="radio" name="slot53" tabindex="-1" required>
+                <input type="radio" name="slot53" tabindex="-1" required>
+                <div class="disc"></div>
+                <input type="radio" name="slot54" tabindex="-1" required>
+                <input type="radio" name="slot54" tabindex="-1" required>
+                <div class="disc"></div>
+                <input type="radio" name="slot55" tabindex="-1" required>
+                <input type="radio" name="slot55" tabindex="-1" required>
+                <div class="disc"></div>
+                <input type="radio" name="slot56" tabindex="-1" required>
+                <input type="radio" name="slot56" tabindex="-1" required>
+                <div class="disc"></div>
 
-	.grid
-		- count.times do |i|
-			%label{:for => "c#{i+1}"}
-		.flags
-			- count.times do |i|
-				%label{:for => "f#{i+1}"}
-		%button.error(type="reset" tabindex="-1")
-			Ooohhh 🙁
-			%br
-			Click to try again
-		%button.victory(type="reset" tabindex="-1")
-			👌👀✔💯💯💯
-			%br
-			Click to restart
-			
-	.infos
-		.counter
-		.timer
-			- 3.times do
-				.digit
-			.separator
-			- 2.times do
-				.digit 
+                <!--Column 5 after-->
+                <div class="column">
+                  <input type="radio" name="slot61" tabindex="-1" required>
+                  <input type="radio" name="slot61" tabindex="-1" required>
+                  <div class="disc"></div>
+                  <input type="radio" name="slot62" tabindex="-1" required>
+                  <input type="radio" name="slot62" tabindex="-1" required>
+                  <div class="disc"></div>
+                  <input type="radio" name="slot63" tabindex="-1" required>
+                  <input type="radio" name="slot63" tabindex="-1" required>
+                  <div class="disc"></div>
+                  <input type="radio" name="slot64" tabindex="-1" required>
+                  <input type="radio" name="slot64" tabindex="-1" required>
+                  <div class="disc"></div>
+                  <input type="radio" name="slot65" tabindex="-1" required>
+                  <input type="radio" name="slot65" tabindex="-1" required>
+                  <div class="disc"></div>
+                  <input type="radio" name="slot66" tabindex="-1" required>
+                  <input type="radio" name="slot66" tabindex="-1" required>
+                  <div class="disc"></div>
+
+                  <!--Column 6 after-->
+                  <div class="column">
+                    <input type="radio" name="slot71" tabindex="-1" required>
+                    <input type="radio" name="slot71" tabindex="-1" required>
+                    <div class="disc"></div>
+                    <input type="radio" name="slot72" tabindex="-1" required>
+                    <input type="radio" name="slot72" tabindex="-1" required>
+                    <div class="disc"></div>
+                    <input type="radio" name="slot73" tabindex="-1" required>
+                    <input type="radio" name="slot73" tabindex="-1" required>
+                    <div class="disc"></div>
+                    <input type="radio" name="slot74" tabindex="-1" required>
+                    <input type="radio" name="slot74" tabindex="-1" required>
+                    <div class="disc"></div>
+                    <input type="radio" name="slot75" tabindex="-1" required>
+                    <input type="radio" name="slot75" tabindex="-1" required>
+                    <div class="disc"></div>
+                    <input type="radio" name="slot76" tabindex="-1" required>
+                    <input type="radio" name="slot76" tabindex="-1" required>
+                    <div class="disc"></div>
+
+                    <!--Column 7 after-->
+                    <div class="column"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="front"></div>
+  </div>
+  <button type="reset">New Game</button>
+</form> 
