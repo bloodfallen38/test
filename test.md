@@ -3,7 +3,7 @@ title: "test"
 order: 4
 in_menu: true
 ---
-<h1>Pure CSS Connect 4</h1>
+<h1>Puissance 4</h1>
 <form>
   <div class="board">
     <div class="field">
