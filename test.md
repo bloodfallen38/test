@@ -3,601 +3,335 @@ title: "test"
 order: 4
 in_menu: true
 ---
-<head>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="./bycss.css" type="text/css">
-  <title>Pure CSS Game - Bycss -</title>
-</head>
-<body>
-  <div id="important"></div>
-  <input type="checkbox" name="gamestart" id="start">
-  <input type="radio" name="modeselect" id="mode_color">
-  <input type="radio" name="modeselect" id="mode_retro">
-  <div class="stage">
-    <!-- a-sq -->
-    <input type="checkbox" name="a-select" id="putF-a_P-1_B-sq_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-2_B-sq_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-3_B-sq_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-4_B-sq_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-5_B-sq_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-6_B-sq_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-7_B-sq_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-8_B-sq_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-9_B-sq_N-1">
-    <!-- a-lg -->
-    <input type="checkbox" name="a-select" id="putF-a_P-4_B-lg_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-5_B-lg_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-6_B-lg_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-7_B-lg_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-8_B-lg_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-9_B-lg_N-1">
-    <!-- a-wd -->
-    <input type="checkbox" name="a-select" id="putF-a_P-1_B-wd_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-2_B-wd_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-4_B-wd_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-5_B-wd_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-7_B-wd_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-8_B-wd_N-1">
-    <!-- a-el -->
-    <input type="checkbox" name="a-select" id="putF-a_P-4_B-el_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-5_B-el_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-7_B-el_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-8_B-el_N-1">
-    <!-- a-rv -->
-    <input type="checkbox" name="a-select" id="putF-a_P-2_B-rv_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-3_B-rv_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-5_B-rv_N-1">
-    <input type="checkbox" name="a-select" id="putF-a_P-6_B-rv_N-1">
-    <!-- b-sq -->
-    <input type="checkbox" name="b-select" id="putF-b_P-1_B-sq_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-2_B-sq_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-3_B-sq_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-4_B-sq_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-5_B-sq_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-6_B-sq_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-7_B-sq_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-8_B-sq_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-9_B-sq_N-1">
-    <!-- b-lg -->
-    <input type="checkbox" name="b-select" id="putF-b_P-4_B-lg_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-5_B-lg_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-6_B-lg_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-7_B-lg_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-8_B-lg_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-9_B-lg_N-1">
-    <!-- b-wd -->
-    <input type="checkbox" name="b-select" id="putF-b_P-1_B-wd_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-2_B-wd_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-4_B-wd_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-5_B-wd_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-7_B-wd_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-8_B-wd_N-1">
-    <!-- b-el -->
-    <input type="checkbox" name="b-select" id="putF-b_P-4_B-el_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-5_B-el_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-7_B-el_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-8_B-el_N-1">
-    <!-- b-rv -->
-    <input type="checkbox" name="b-select" id="putF-b_P-2_B-rv_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-3_B-rv_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-5_B-rv_N-1">
-    <input type="checkbox" name="b-select" id="putF-b_P-6_B-rv_N-1">
-    <!-- c-sq -->
-    <input type="checkbox" name="c-select" id="putF-c_P-1_B-sq_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-2_B-sq_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-3_B-sq_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-4_B-sq_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-5_B-sq_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-6_B-sq_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-7_B-sq_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-8_B-sq_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-9_B-sq_N-1">
-    <!-- c-lg -->
-    <input type="checkbox" name="c-select" id="putF-c_P-4_B-lg_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-5_B-lg_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-6_B-lg_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-7_B-lg_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-8_B-lg_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-9_B-lg_N-1">
-    <!-- c-wd -->
-    <input type="checkbox" name="c-select" id="putF-c_P-1_B-wd_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-2_B-wd_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-4_B-wd_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-5_B-wd_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-7_B-wd_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-8_B-wd_N-1">
-    <!-- c-el -->
-    <input type="checkbox" name="c-select" id="putF-c_P-4_B-el_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-5_B-el_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-7_B-el_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-8_B-el_N-1">
-    <!-- c-rv -->
-    <input type="checkbox" name="c-select" id="putF-c_P-2_B-rv_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-3_B-rv_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-5_B-rv_N-1">
-    <input type="checkbox" name="c-select" id="putF-c_P-6_B-rv_N-1">
-    <!-- G-sq -->
-    <input type="checkbox" name="g-select" id="putF-g_P-1_B-sq_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-2_B-sq_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-3_B-sq_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-4_B-sq_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-5_B-sq_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-6_B-sq_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-7_B-sq_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-8_B-sq_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-9_B-sq_N-1">
-    <!-- G-lg -->
-    <input type="checkbox" name="g-select" id="putF-g_P-4_B-lg_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-5_B-lg_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-6_B-lg_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-7_B-lg_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-8_B-lg_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-9_B-lg_N-1">
-    <!-- G-wd -->
-    <input type="checkbox" name="g-select" id="putF-g_P-1_B-wd_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-2_B-wd_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-4_B-wd_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-5_B-wd_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-7_B-wd_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-8_B-wd_N-1">
-    <!-- G-el -->
-    <input type="checkbox" name="g-select" id="putF-g_P-4_B-el_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-5_B-el_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-7_B-el_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-8_B-el_N-1">
-    <!-- G-rv -->
-    <input type="checkbox" name="g-select" id="putF-g_P-2_B-rv_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-3_B-rv_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-5_B-rv_N-1">
-    <input type="checkbox" name="g-select" id="putF-g_P-6_B-rv_N-1">
+-# Game grid variablesb
+-# Make sure these are reflected in the SASS.
+- rows = 4;
+- columns = 12;
+- tilesPerSegment = 3;
+- tilePerSegmentVertical = 7;
+- hasIntro = true;
+- hasLoader = true;
 
-    <!-- Next Block -->
-    <input type="checkbox" name="a-next" id="nextF-a_B-sq_N-1">
-    <input type="checkbox" name="a-next" id="nextF-a_B-sq_N-2">
-    <input type="checkbox" name="a-next" id="nextF-a_B-sq_N-3">
-    <input type="checkbox" name="a-next" id="nextF-a_B-sq_N-4">
-    <input type="checkbox" name="a-next" id="nextF-a_B-sq_N-5">
-    <input type="checkbox" name="a-next" id="nextF-a_B-sq_N-6">
-    <input type="checkbox" name="a-next" id="nextF-a_B-sq_N-7">
-    <input type="checkbox" name="a-next" id="nextF-a_B-sq_N-8">
-    <input type="checkbox" name="a-next" id="nextF-a_B-sq_N-9">
-    <input type="checkbox" name="a-next" id="nextF-a_B-lg_N-1">
-    <input type="checkbox" name="a-next" id="nextF-a_B-lg_N-2">
-    <input type="checkbox" name="a-next" id="nextF-a_B-lg_N-3">
-    <input type="checkbox" name="a-next" id="nextF-a_B-wd_N-1">
-    <input type="checkbox" name="a-next" id="nextF-a_B-wd_N-2">
-    <input type="checkbox" name="a-next" id="nextF-a_B-wd_N-3">
-    <input type="checkbox" name="a-next" id="nextF-a_B-el_N-1">
-    <input type="checkbox" name="a-next" id="nextF-a_B-el_N-2">
-    <input type="checkbox" name="a-next" id="nextF-a_B-rv_N-1">
-    <input type="checkbox" name="a-next" id="nextF-a_B-rv_N-2">
-    <input type="checkbox" name="a-next" id="nextF-b_B-sq_N-1">
-    <input type="checkbox" name="a-next" id="nextF-b_B-sq_N-2">
-    <input type="checkbox" name="a-next" id="nextF-b_B-sq_N-3">
-    <input type="checkbox" name="a-next" id="nextF-b_B-sq_N-4">
-    <input type="checkbox" name="a-next" id="nextF-b_B-sq_N-5">
-    <input type="checkbox" name="a-next" id="nextF-b_B-sq_N-6">
-    <input type="checkbox" name="a-next" id="nextF-b_B-sq_N-7">
-    <input type="checkbox" name="a-next" id="nextF-b_B-sq_N-8">
-    <input type="checkbox" name="a-next" id="nextF-b_B-sq_N-9">
-    <input type="checkbox" name="a-next" id="nextF-b_B-lg_N-1">
-    <input type="checkbox" name="a-next" id="nextF-b_B-lg_N-2">
-    <input type="checkbox" name="a-next" id="nextF-b_B-lg_N-3">
-    <input type="checkbox" name="a-next" id="nextF-b_B-wd_N-1">
-    <input type="checkbox" name="a-next" id="nextF-b_B-wd_N-2">
-    <input type="checkbox" name="a-next" id="nextF-b_B-wd_N-3">
-    <input type="checkbox" name="a-next" id="nextF-b_B-el_N-1">
-    <input type="checkbox" name="a-next" id="nextF-b_B-el_N-2">
-    <input type="checkbox" name="a-next" id="nextF-b_B-rv_N-1">
-    <input type="checkbox" name="a-next" id="nextF-b_B-rv_N-2">
-    <input type="checkbox" name="a-next" id="nextF-c_B-sq_N-1">
-    <input type="checkbox" name="a-next" id="nextF-c_B-sq_N-2">
-    <input type="checkbox" name="a-next" id="nextF-c_B-sq_N-3">
-    <input type="checkbox" name="a-next" id="nextF-c_B-sq_N-4">
-    <input type="checkbox" name="a-next" id="nextF-c_B-sq_N-5">
-    <input type="checkbox" name="a-next" id="nextF-c_B-sq_N-6">
-    <input type="checkbox" name="a-next" id="nextF-c_B-sq_N-7">
-    <input type="checkbox" name="a-next" id="nextF-c_B-sq_N-8">
-    <input type="checkbox" name="a-next" id="nextF-c_B-sq_N-9">
-    <input type="checkbox" name="a-next" id="nextF-c_B-lg_N-1">
-    <input type="checkbox" name="a-next" id="nextF-c_B-lg_N-2">
-    <input type="checkbox" name="a-next" id="nextF-c_B-lg_N-3">
-    <input type="checkbox" name="a-next" id="nextF-c_B-wd_N-1">
-    <input type="checkbox" name="a-next" id="nextF-c_B-wd_N-2">
-    <input type="checkbox" name="a-next" id="nextF-c_B-wd_N-3">
-    <input type="checkbox" name="a-next" id="nextF-c_B-el_N-1">
-    <input type="checkbox" name="a-next" id="nextF-c_B-el_N-2">
-    <input type="checkbox" name="a-next" id="nextF-c_B-rv_N-1">
-    <input type="checkbox" name="a-next" id="nextF-c_B-rv_N-2">
-    <div class="nextblock_btn">
-      <label for="nextF-a_B-sq_N-1" class="buttonnextF-a_B-sq_N-1"></label>
-      <label for="nextF-a_B-sq_N-2" class="buttonnextF-a_B-sq_N-2"></label>
-      <label for="nextF-a_B-sq_N-3" class="buttonnextF-a_B-sq_N-3"></label>
-      <label for="nextF-a_B-sq_N-4" class="buttonnextF-a_B-sq_N-4"></label>
-      <label for="nextF-a_B-sq_N-5" class="buttonnextF-a_B-sq_N-5"></label>
-      <label for="nextF-a_B-sq_N-6" class="buttonnextF-a_B-sq_N-6"></label>
-      <label for="nextF-a_B-sq_N-7" class="buttonnextF-a_B-sq_N-7"></label>
-      <label for="nextF-a_B-sq_N-8" class="buttonnextF-a_B-sq_N-8"></label>
-      <label for="nextF-a_B-sq_N-9" class="buttonnextF-a_B-sq_N-9"></label>
-      <label for="nextF-a_B-lg_N-1" class="buttonnextF-a_B-lg_N-1"></label>
-      <label for="nextF-a_B-lg_N-2" class="buttonnextF-a_B-lg_N-2"></label>
-      <label for="nextF-a_B-lg_N-3" class="buttonnextF-a_B-lg_N-3"></label>
-      <label for="nextF-a_B-wd_N-1" class="buttonnextF-a_B-wd_N-1"></label>
-      <label for="nextF-a_B-wd_N-2" class="buttonnextF-a_B-wd_N-2"></label>
-      <label for="nextF-a_B-wd_N-3" class="buttonnextF-a_B-wd_N-3"></label>
-      <label for="nextF-a_B-el_N-1" class="buttonnextF-a_B-el_N-1"></label>
-      <label for="nextF-a_B-el_N-2" class="buttonnextF-a_B-el_N-2"></label>
-      <label for="nextF-a_B-rv_N-1" class="buttonnextF-a_B-rv_N-1"></label>
-      <label for="nextF-a_B-rv_N-2" class="buttonnextF-a_B-rv_N-2"></label>
-      <label for="nextF-b_B-sq_N-1" class="buttonnextF-b_B-sq_N-1"></label>
-      <label for="nextF-b_B-sq_N-2" class="buttonnextF-b_B-sq_N-2"></label>
-      <label for="nextF-b_B-sq_N-3" class="buttonnextF-b_B-sq_N-3"></label>
-      <label for="nextF-b_B-sq_N-4" class="buttonnextF-b_B-sq_N-4"></label>
-      <label for="nextF-b_B-sq_N-5" class="buttonnextF-b_B-sq_N-5"></label>
-      <label for="nextF-b_B-sq_N-6" class="buttonnextF-b_B-sq_N-6"></label>
-      <label for="nextF-b_B-sq_N-7" class="buttonnextF-b_B-sq_N-7"></label>
-      <label for="nextF-b_B-sq_N-8" class="buttonnextF-b_B-sq_N-8"></label>
-      <label for="nextF-b_B-sq_N-9" class="buttonnextF-b_B-sq_N-9"></label>
-      <label for="nextF-b_B-lg_N-1" class="buttonnextF-b_B-lg_N-1"></label>
-      <label for="nextF-b_B-lg_N-2" class="buttonnextF-b_B-lg_N-2"></label>
-      <label for="nextF-b_B-lg_N-3" class="buttonnextF-b_B-lg_N-3"></label>
-      <label for="nextF-b_B-wd_N-1" class="buttonnextF-b_B-wd_N-1"></label>
-      <label for="nextF-b_B-wd_N-2" class="buttonnextF-b_B-wd_N-2"></label>
-      <label for="nextF-b_B-wd_N-3" class="buttonnextF-b_B-wd_N-3"></label>
-      <label for="nextF-b_B-el_N-1" class="buttonnextF-b_B-el_N-1"></label>
-      <label for="nextF-b_B-el_N-2" class="buttonnextF-b_B-el_N-2"></label>
-      <label for="nextF-b_B-rv_N-1" class="buttonnextF-b_B-rv_N-1"></label>
-      <label for="nextF-b_B-rv_N-2" class="buttonnextF-b_B-rv_N-2"></label>
-      <label for="nextF-c_B-sq_N-1" class="buttonnextF-c_B-sq_N-1"></label>
-      <label for="nextF-c_B-sq_N-2" class="buttonnextF-c_B-sq_N-2"></label>
-      <label for="nextF-c_B-sq_N-3" class="buttonnextF-c_B-sq_N-3"></label>
-      <label for="nextF-c_B-sq_N-4" class="buttonnextF-c_B-sq_N-4"></label>
-      <label for="nextF-c_B-sq_N-5" class="buttonnextF-c_B-sq_N-5"></label>
-      <label for="nextF-c_B-sq_N-6" class="buttonnextF-c_B-sq_N-6"></label>
-      <label for="nextF-c_B-sq_N-7" class="buttonnextF-c_B-sq_N-7"></label>
-      <label for="nextF-c_B-sq_N-8" class="buttonnextF-c_B-sq_N-8"></label>
-      <label for="nextF-c_B-sq_N-9" class="buttonnextF-c_B-sq_N-9"></label>
-      <label for="nextF-c_B-lg_N-1" class="buttonnextF-c_B-lg_N-1"></label>
-      <label for="nextF-c_B-lg_N-2" class="buttonnextF-c_B-lg_N-2"></label>
-      <label for="nextF-c_B-lg_N-3" class="buttonnextF-c_B-lg_N-3"></label>
-      <label for="nextF-c_B-wd_N-1" class="buttonnextF-c_B-wd_N-1"></label>
-      <label for="nextF-c_B-wd_N-2" class="buttonnextF-c_B-wd_N-2"></label>
-      <label for="nextF-c_B-wd_N-3" class="buttonnextF-c_B-wd_N-3"></label>
-      <label for="nextF-c_B-el_N-1" class="buttonnextF-c_B-el_N-1"></label>
-      <label for="nextF-c_B-el_N-2" class="buttonnextF-c_B-el_N-2"></label>
-      <label for="nextF-c_B-rv_N-1" class="buttonnextF-c_B-rv_N-1"></label>
-      <label for="nextF-c_B-rv_N-2" class="buttonnextF-c_B-rv_N-2"></label>
-    </div>
-    <!-- Labels -->
-    <label for="putF-a_P-1_B-sq_N-1" class="selectF-a_P-1_B-sq_N-1"></label>
-    <label for="putF-a_P-2_B-sq_N-1" class="selectF-a_P-2_B-sq_N-1"></label>
-    <label for="putF-a_P-3_B-sq_N-1" class="selectF-a_P-3_B-sq_N-1"></label>
-    <label for="putF-a_P-4_B-sq_N-1" class="selectF-a_P-4_B-sq_N-1"></label>
-    <label for="putF-a_P-5_B-sq_N-1" class="selectF-a_P-5_B-sq_N-1"></label>
-    <label for="putF-a_P-6_B-sq_N-1" class="selectF-a_P-6_B-sq_N-1"></label>
-    <label for="putF-a_P-7_B-sq_N-1" class="selectF-a_P-7_B-sq_N-1"></label>
-    <label for="putF-a_P-8_B-sq_N-1" class="selectF-a_P-8_B-sq_N-1"></label>
-    <label for="putF-a_P-9_B-sq_N-1" class="selectF-a_P-9_B-sq_N-1"></label>
-    <label for="putF-a_P-4_B-lg_N-1" class="selectF-a_P-4_B-lg_N-1"></label>
-    <label for="putF-a_P-5_B-lg_N-1" class="selectF-a_P-5_B-lg_N-1"></label>
-    <label for="putF-a_P-6_B-lg_N-1" class="selectF-a_P-6_B-lg_N-1"></label>
-    <label for="putF-a_P-7_B-lg_N-1" class="selectF-a_P-7_B-lg_N-1"></label>
-    <label for="putF-a_P-8_B-lg_N-1" class="selectF-a_P-8_B-lg_N-1"></label>
-    <label for="putF-a_P-9_B-lg_N-1" class="selectF-a_P-9_B-lg_N-1"></label>
-    <label for="putF-a_P-1_B-wd_N-1" class="selectF-a_P-1_B-wd_N-1"></label>
-    <label for="putF-a_P-2_B-wd_N-1" class="selectF-a_P-2_B-wd_N-1"></label>
-    <label for="putF-a_P-4_B-wd_N-1" class="selectF-a_P-4_B-wd_N-1"></label>
-    <label for="putF-a_P-5_B-wd_N-1" class="selectF-a_P-5_B-wd_N-1"></label>
-    <label for="putF-a_P-7_B-wd_N-1" class="selectF-a_P-7_B-wd_N-1"></label>
-    <label for="putF-a_P-8_B-wd_N-1" class="selectF-a_P-8_B-wd_N-1"></label>
-    <label for="putF-a_P-4_B-el_N-1" class="selectF-a_P-4_B-el_N-1"></label>
-    <label for="putF-a_P-5_B-el_N-1" class="selectF-a_P-5_B-el_N-1"></label>
-    <label for="putF-a_P-7_B-el_N-1" class="selectF-a_P-7_B-el_N-1"></label>
-    <label for="putF-a_P-8_B-el_N-1" class="selectF-a_P-8_B-el_N-1"></label>
-    <label for="putF-a_P-2_B-rv_N-1" class="selectF-a_P-2_B-rv_N-1"></label>
-    <label for="putF-a_P-3_B-rv_N-1" class="selectF-a_P-3_B-rv_N-1"></label>
-    <label for="putF-a_P-5_B-rv_N-1" class="selectF-a_P-5_B-rv_N-1"></label>
-    <label for="putF-a_P-6_B-rv_N-1" class="selectF-a_P-6_B-rv_N-1"></label>
-    <label for="putF-b_P-1_B-sq_N-1" class="selectF-b_P-1_B-sq_N-1"></label>
-    <label for="putF-b_P-2_B-sq_N-1" class="selectF-b_P-2_B-sq_N-1"></label>
-    <label for="putF-b_P-3_B-sq_N-1" class="selectF-b_P-3_B-sq_N-1"></label>
-    <label for="putF-b_P-4_B-sq_N-1" class="selectF-b_P-4_B-sq_N-1"></label>
-    <label for="putF-b_P-5_B-sq_N-1" class="selectF-b_P-5_B-sq_N-1"></label>
-    <label for="putF-b_P-6_B-sq_N-1" class="selectF-b_P-6_B-sq_N-1"></label>
-    <label for="putF-b_P-7_B-sq_N-1" class="selectF-b_P-7_B-sq_N-1"></label>
-    <label for="putF-b_P-8_B-sq_N-1" class="selectF-b_P-8_B-sq_N-1"></label>
-    <label for="putF-b_P-9_B-sq_N-1" class="selectF-b_P-9_B-sq_N-1"></label>
-    <label for="putF-b_P-4_B-lg_N-1" class="selectF-b_P-4_B-lg_N-1"></label>
-    <label for="putF-b_P-5_B-lg_N-1" class="selectF-b_P-5_B-lg_N-1"></label>
-    <label for="putF-b_P-6_B-lg_N-1" class="selectF-b_P-6_B-lg_N-1"></label>
-    <label for="putF-b_P-7_B-lg_N-1" class="selectF-b_P-7_B-lg_N-1"></label>
-    <label for="putF-b_P-8_B-lg_N-1" class="selectF-b_P-8_B-lg_N-1"></label>
-    <label for="putF-b_P-9_B-lg_N-1" class="selectF-b_P-9_B-lg_N-1"></label>
-    <label for="putF-b_P-1_B-wd_N-1" class="selectF-b_P-1_B-wd_N-1"></label>
-    <label for="putF-b_P-2_B-wd_N-1" class="selectF-b_P-2_B-wd_N-1"></label>
-    <label for="putF-b_P-4_B-wd_N-1" class="selectF-b_P-4_B-wd_N-1"></label>
-    <label for="putF-b_P-5_B-wd_N-1" class="selectF-b_P-5_B-wd_N-1"></label>
-    <label for="putF-b_P-7_B-wd_N-1" class="selectF-b_P-7_B-wd_N-1"></label>
-    <label for="putF-b_P-8_B-wd_N-1" class="selectF-b_P-8_B-wd_N-1"></label>
-    <label for="putF-b_P-4_B-el_N-1" class="selectF-b_P-4_B-el_N-1"></label>
-    <label for="putF-b_P-5_B-el_N-1" class="selectF-b_P-5_B-el_N-1"></label>
-    <label for="putF-b_P-7_B-el_N-1" class="selectF-b_P-7_B-el_N-1"></label>
-    <label for="putF-b_P-8_B-el_N-1" class="selectF-b_P-8_B-el_N-1"></label>
-    <label for="putF-b_P-2_B-rv_N-1" class="selectF-b_P-2_B-rv_N-1"></label>
-    <label for="putF-b_P-3_B-rv_N-1" class="selectF-b_P-3_B-rv_N-1"></label>
-    <label for="putF-b_P-5_B-rv_N-1" class="selectF-b_P-5_B-rv_N-1"></label>
-    <label for="putF-b_P-6_B-rv_N-1" class="selectF-b_P-6_B-rv_N-1"></label>
-    <label for="putF-c_P-1_B-sq_N-1" class="selectF-c_P-1_B-sq_N-1"></label>
-    <label for="putF-c_P-2_B-sq_N-1" class="selectF-c_P-2_B-sq_N-1"></label>
-    <label for="putF-c_P-3_B-sq_N-1" class="selectF-c_P-3_B-sq_N-1"></label>
-    <label for="putF-c_P-4_B-sq_N-1" class="selectF-c_P-4_B-sq_N-1"></label>
-    <label for="putF-c_P-5_B-sq_N-1" class="selectF-c_P-5_B-sq_N-1"></label>
-    <label for="putF-c_P-6_B-sq_N-1" class="selectF-c_P-6_B-sq_N-1"></label>
-    <label for="putF-c_P-7_B-sq_N-1" class="selectF-c_P-7_B-sq_N-1"></label>
-    <label for="putF-c_P-8_B-sq_N-1" class="selectF-c_P-8_B-sq_N-1"></label>
-    <label for="putF-c_P-9_B-sq_N-1" class="selectF-c_P-9_B-sq_N-1"></label>
-    <label for="putF-c_P-4_B-lg_N-1" class="selectF-c_P-4_B-lg_N-1"></label>
-    <label for="putF-c_P-5_B-lg_N-1" class="selectF-c_P-5_B-lg_N-1"></label>
-    <label for="putF-c_P-6_B-lg_N-1" class="selectF-c_P-6_B-lg_N-1"></label>
-    <label for="putF-c_P-7_B-lg_N-1" class="selectF-c_P-7_B-lg_N-1"></label>
-    <label for="putF-c_P-8_B-lg_N-1" class="selectF-c_P-8_B-lg_N-1"></label>
-    <label for="putF-c_P-9_B-lg_N-1" class="selectF-c_P-9_B-lg_N-1"></label>
-    <label for="putF-c_P-1_B-wd_N-1" class="selectF-c_P-1_B-wd_N-1"></label>
-    <label for="putF-c_P-2_B-wd_N-1" class="selectF-c_P-2_B-wd_N-1"></label>
-    <label for="putF-c_P-4_B-wd_N-1" class="selectF-c_P-4_B-wd_N-1"></label>
-    <label for="putF-c_P-5_B-wd_N-1" class="selectF-c_P-5_B-wd_N-1"></label>
-    <label for="putF-c_P-7_B-wd_N-1" class="selectF-c_P-7_B-wd_N-1"></label>
-    <label for="putF-c_P-8_B-wd_N-1" class="selectF-c_P-8_B-wd_N-1"></label>
-    <label for="putF-c_P-4_B-el_N-1" class="selectF-c_P-4_B-el_N-1"></label>
-    <label for="putF-c_P-5_B-el_N-1" class="selectF-c_P-5_B-el_N-1"></label>
-    <label for="putF-c_P-7_B-el_N-1" class="selectF-c_P-7_B-el_N-1"></label>
-    <label for="putF-c_P-8_B-el_N-1" class="selectF-c_P-8_B-el_N-1"></label>
-    <label for="putF-c_P-2_B-rv_N-1" class="selectF-c_P-2_B-rv_N-1"></label>
-    <label for="putF-c_P-3_B-rv_N-1" class="selectF-c_P-3_B-rv_N-1"></label>
-    <label for="putF-c_P-5_B-rv_N-1" class="selectF-c_P-5_B-rv_N-1"></label>
-    <label for="putF-c_P-6_B-rv_N-1" class="selectF-c_P-6_B-rv_N-1"></label>
-    <label for="putF-g_P-1_B-sq_N-1" class="selectF-g_P-1_B-sq_N-1"></label>
-    <label for="putF-g_P-2_B-sq_N-1" class="selectF-g_P-2_B-sq_N-1"></label>
-    <label for="putF-g_P-3_B-sq_N-1" class="selectF-g_P-3_B-sq_N-1"></label>
-    <label for="putF-g_P-4_B-sq_N-1" class="selectF-g_P-4_B-sq_N-1"></label>
-    <label for="putF-g_P-5_B-sq_N-1" class="selectF-g_P-5_B-sq_N-1"></label>
-    <label for="putF-g_P-6_B-sq_N-1" class="selectF-g_P-6_B-sq_N-1"></label>
-    <label for="putF-g_P-7_B-sq_N-1" class="selectF-g_P-7_B-sq_N-1"></label>
-    <label for="putF-g_P-8_B-sq_N-1" class="selectF-g_P-8_B-sq_N-1"></label>
-    <label for="putF-g_P-9_B-sq_N-1" class="selectF-g_P-9_B-sq_N-1"></label>
-    <label for="putF-g_P-4_B-lg_N-1" class="selectF-g_P-4_B-lg_N-1"></label>
-    <label for="putF-g_P-5_B-lg_N-1" class="selectF-g_P-5_B-lg_N-1"></label>
-    <label for="putF-g_P-6_B-lg_N-1" class="selectF-g_P-6_B-lg_N-1"></label>
-    <label for="putF-g_P-7_B-lg_N-1" class="selectF-g_P-7_B-lg_N-1"></label>
-    <label for="putF-g_P-8_B-lg_N-1" class="selectF-g_P-8_B-lg_N-1"></label>
-    <label for="putF-g_P-9_B-lg_N-1" class="selectF-g_P-9_B-lg_N-1"></label>
-    <label for="putF-g_P-1_B-wd_N-1" class="selectF-g_P-1_B-wd_N-1"></label>
-    <label for="putF-g_P-2_B-wd_N-1" class="selectF-g_P-2_B-wd_N-1"></label>
-    <label for="putF-g_P-4_B-wd_N-1" class="selectF-g_P-4_B-wd_N-1"></label>
-    <label for="putF-g_P-5_B-wd_N-1" class="selectF-g_P-5_B-wd_N-1"></label>
-    <label for="putF-g_P-7_B-wd_N-1" class="selectF-g_P-7_B-wd_N-1"></label>
-    <label for="putF-g_P-8_B-wd_N-1" class="selectF-g_P-8_B-wd_N-1"></label>
-    <label for="putF-g_P-4_B-el_N-1" class="selectF-g_P-4_B-el_N-1"></label>
-    <label for="putF-g_P-5_B-el_N-1" class="selectF-g_P-5_B-el_N-1"></label>
-    <label for="putF-g_P-7_B-el_N-1" class="selectF-g_P-7_B-el_N-1"></label>
-    <label for="putF-g_P-8_B-el_N-1" class="selectF-g_P-8_B-el_N-1"></label>
-    <label for="putF-g_P-2_B-rv_N-1" class="selectF-g_P-2_B-rv_N-1"></label>
-    <label for="putF-g_P-3_B-rv_N-1" class="selectF-g_P-3_B-rv_N-1"></label>
-    <label for="putF-g_P-5_B-rv_N-1" class="selectF-g_P-5_B-rv_N-1"></label>
-    <label for="putF-g_P-6_B-rv_N-1" class="selectF-g_P-6_B-rv_N-1"></label>
-    <!-- Floor A -->
-    <div class="floor-a">
-      <div class="block9">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-        </div>
-      </div>
-      <div class="block7">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-          </div>
-      </div>
-      <div class="block3">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-        </div>
-      </div>
-      <div class="block1">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-        </div>
-      </div>
-      <div class="block8">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-        </div>
-      </div>
-      <div class="block6">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-        </div>
-      </div>
-      <div class="block4">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-        </div>
-      </div>
-      <div class="block2">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-        </div>
-      </div>
-      <div class="block5">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-        </div>
-      </div>
-    </div>
-    <div class="aclear"></div>
-    <!-- Floor B -->
-    <div class="floor-b">
-      <div class="block9">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-        </div>
-      </div>
-      <div class="block7">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div> 
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-          </div>
-      </div>
-      <div class="block3">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-        </div>
-      </div>
-      <div class="block1">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-        </div>
-      </div>
-      <div class="block8">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-        </div>
-      </div>
-      <div class="block6">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-        </div>
-      </div>
-      <div class="block4">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-        </div>
-      </div>
-      <div class="block2">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-        </div>
-      </div>
-      <div class="block5">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-        </div>
-      </div>
-    </div>
-    <div class="bclear"></div>
-    <!-- Floor C -->
-    <div class="floor-c">
-      <div class="block9">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-        </div>
-      </div>
-      <div class="block7">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div> 
-          <div class="side_top"></div>
-          <div class="side_back"></div>
-          <div class="side_right"></div>
-          <div class="side_left"></div>
-          </div>
-      </div>
-      <div class="block3">
-        <div class="cube">
-          <div class="side_front"></div>
-          <div class="side_bottom"></div>
-          <div class="side_top"></div>
-          <div class="side_back"></div> 
+-# Game
+.game
+    -# Loader
+    - if(hasLoader == true)
+        .game_loader
+            .game_loader__inner
+                .logo
+                    %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/mineLogo.gif'}
+                .subtitle
+                    %h1 A no JS Adventure game
+                .bar
+                    .bar_inner
+                %span Loading checkboxes...
+    -# Intro
+    - if(hasIntro == true)
+        .game_intro 
+            %input#intro-1{:class => 'dialogue', :type => 'radio', :name => 'intro', :checked => 'checked'}
+            .dialogue
+                Ahhhhhhh!!
+                %label{:for => 'intro-2'}
+                    %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'}
+            %input#intro-2{:class => 'dialogue', :type => 'radio', :name => 'intro'}
+            .dialogue
+                The floor just collapsed under me
+                %label{:for => 'intro-3'}
+                    %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'}
+            %input#intro-3{:class => 'dialogue', :type => 'radio', :name => 'intro'}
+            .dialogue
+                Geez it sure is dark in here
+                %label{:for => 'intro-4'}
+                    %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'}
+            %input#intro-4{:class => 'dialogue', :type => 'radio', :name => 'intro'}
+            .dialogue
+                Let me light my torch...
+                %label{:for => 'intro-5'}
+                    %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'}
+            %input#intro-5{:class => 'dialogue', :type => 'radio', :name => 'intro'}
+            .dialogue.end
+                Better. Need to find a way out.
+            %input#intro-6{:class => 'dialogue', :type => 'radio', :name => 'intro'}
+            .overlay
+    
+    -# Padlock game
+    %input#interactiveObject--lock{:type=> 'checkbox'}
+    .padlock
+        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/padlockBig.png'}
+    -(1..3).each do |col|
+        -(1..9).each do |i|
+            - if(i == 9)
+                %input{:type=> 'checkbox', 'value' => i, :id => "padlock#{col}-#{i}", :checked => 'checked'} 
+                    %span{:id => "span-#{col}"} #{10 - i}
+            - else
+                %input{:type=> 'checkbox', 'value' => i, :id => "padlock#{col}-#{i}"} 
+                    %span{:id => "span-#{col}"} #{10 - i}
+    %label.check{:for => 'interactiveObject--lock'} check
+    
+    -# Game items
+
+    %input#interactiveObject1{:type => 'radio', 'data-reference' => '1', 'data-debug' => "Empty box 1"}
+    %input#interactiveObject2{:type => 'radio', 'data-reference' => '2', 'data-debug' => "Pickaxe"}
+    %input#interactiveObject3{:type => 'checkbox', 'data-reference' => '3', 'data-debug' => "Boulder"}
+    %input#interactiveObject4{:type => 'radio', 'data-reference' => '4', 'data-debug' => "Dynamite plunger"}
+    %input#interactiveObject5{:type => 'checkbox', 'data-reference' => '5', 'data-debug' => "Dynamite door"}
+    %input#interactiveObject6{:type => 'radio', 'data-reference' => '6', 'data-debug' => "Planks"}
+    %input#interactiveObject7{:type => 'checkbox', 'data-reference' => '7', 'data-debug' => "Plank gap"}
+    %input#interactiveObject8{:type => 'radio', 'data-reference' => '8', 'data-debug' => "Note 1"}
+    %input#interactiveObject9{:type => 'radio', 'data-reference' => '9', 'data-debug' => "Note 2"}
+    %input#interactiveObject10{:type => 'radio', 'data-reference' => '10', 'data-debug' => "Note 3"}
+    %input#interactiveObject11{:type => 'radio', 'data-reference' => '11', 'data-debug' => "Lock door"}
+    %input#interactiveObject12{:type => 'radio', 'data-reference' => '12', 'data-debug' => "Handle"}
+    %input#interactiveObject13{:type => 'checkbox', 'data-reference' => '13', 'data-debug' => "Cog"}
+    %input#interactiveObject14{:type => 'checkbox', 'data-reference' => '14', 'data-debug' => "Waterfall"}
+    %input#interactiveObject15{:type => 'radio', 'data-reference' => '15', 'data-debug' => "Dynamite"}
+    %input#interactiveObject16{:type => 'radio', 'data-reference' => '16', 'data-debug' => "Fuses"}
+    %input#interactiveObject17{:type => 'checkbox', 'data-reference' => '17', 'data-debug' => "End door"}
+    %input#interactiveObject18{:type => 'radio', 'data-reference' => '18', 'data-debug' => "Empty box 2"}
+    %input#interactiveObject19{:type => 'radio', 'data-reference' => '19', 'data-debug' => "Empty box 3"}
+    %input#interactiveObject20{:type => 'radio', 'data-reference' => '20', 'data-debug' => "Empty box 4"}
+    %input#interactiveObject21{:type => 'radio', 'data-reference' => '21', 'data-debug' => "Empty box 5"}
+    %input#interactiveObject22{:type => 'radio', 'data-reference' => '22', 'data-debug' => "Empty box 6"}
+    
+    -# Checkboxes for movement
+    -(1..rows).each do |row|
+        -(1..columns).each do |index|
+            - if(row == 1 && index == 2)
+                %input{:id => "indexRow#{row}-#{index}", :type => "radio", :name => "trigger", :checked => 'checked'}
+            - else
+                %input{:id => "indexRow#{row}-#{index}", :type => "radio", :name => "trigger"}
+    
+    -# Game character
+    .game_character
+           
+    -# Game intermediates
+    .game_key
+    
+    -# Game segments
+    .viewport
+        %img.level{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tilemaps.png'}
+        -(1..rows).each do |row|
+            -(1..columns).each do |index|
+                .game_segment
+                    .drip_container
+                        -(1..4).each do
+                            .drip
+                    .tiles
+                        -(1..tilesPerSegment * tilePerSegmentVertical).each do |tile|
+                            -if (row == 1 && index == 3 && tile == 15)
+                                .tile
+                                    %label{:for => 'interactiveObject1', 'data-reference' => '1'}
+                                        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-24.png'}
+                                        .response
+                                            Nothing useful in here
+                            -if (row == 1 && index == 12 && tile == 14)
+                                .tile
+                                    %label{:for => 'interactiveObject2', 'data-reference' => '2'}
+                                        %img.object{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_035.png'}
+                                        .response
+                                            A pickaxe. This should come in handy
+                            -if (row == 1 && index == 7 && tile == 15)
+                                .tile
+                                    %label{:for => 'interactiveObject3', 'data-reference' => '3'}
+                                        %img.forced{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_062.png'}
+                                        .responseSuccess
+                                            Ha! That got it
+                                        .forcedResponse
+                                            I need a tool to get past this
+                                            %label{:for => 'interactiveObject3'}
+                                                %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'}
+                            -if (row == 1 && index == 8 && tile == 15)
+                                .tile
+                                    %label{:for => 'interactiveObject4', 'data-reference' => '4'}
+                                        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_166.png'}
+                                        .response
+                                            That seemed to do something...
+                            -if (row == 3 && index == 7 && tile == 13)
+                                .tile.beam
+                                    %label{:for => 'interactiveObject5', 'data-reference' => '5'}
+                                        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/beam.gif'}
+                                        .responseSuccess
+                                            door gone
+                                        .forcedResponse
+                                            Something must blow this up
+                                            %label{:for => 'interactiveObject5'}
+                                                %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'}
+                            -if (row == 2 && index == 6 && tile == 15)
+                                .tile
+                                    %label{:for => 'interactiveObject6', 'data-reference' => '6'}
+                                        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_094.png'}
+                                        .response
+                                            A Plank of wood
+                            -if (row == 3 && index == 5 && tile == 13)
+                                .tile
+                                    %label{:for => 'interactiveObject7', 'data-reference' => '7'}
+                                        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_169.png'}
+                                        .responseSuccess
+                                            planks on
+                                        .forcedResponse
+                                            CSS won't let me jump this
+                                            %label{:for => 'interactiveObject7'}
+                                                %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'}
+                            -if (row == 1 && index == 6 && tile == 13)
+                                .tile
+                                    %label{:for => 'interactiveObject8', 'data-reference' => '8'}
+                                        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_094.png'}
+                                        .response
+                                            A strange note
+                            -if (row == 1 && index == 10 && tile == 13)
+                                .tile
+                                    %label{:for => 'interactiveObject9', 'data-reference' => '9'}
+                                        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-24.png'}
+                                        .response
+                                            A strange note
+                            -if (row == 3 && index == 5 && tile == 14)
+                                .tile
+                                    %label{:for => 'interactiveObject10', 'data-reference' => '10'}
+                                        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-24.png'}
+                                        .response
+                                            A strange note  
+                            -if (row == 3 && index == 4 && tile == 13)
+                                .tile.door
+                                    %label{:for => 'interactiveObject--lock', 'data-reference' => '11'}
+                                        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/doorLocked.png'}
+                                        .response
+                                            A locked door
+                            -if (row == 3 && index == 2 && tile == 13)
+                                .tile
+                                    %label{:for => 'interactiveObject12', 'data-reference' => '12'}
+                                        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_094.png'}
+                                        .response
+                                            Cog handle
+                            -if (row == 4 && index == 10 && tile == 13)
+                                .tile
+                                    %label{:for => 'interactiveObject13', 'data-reference' => '13'}
+                                        %img.forced{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_148.png'}
+                                        .responseSuccess
+                                            That turned off the water
+                                        .forcedResponse
+                                            There's no handle
+                                            %label{:for => 'interactiveObject13'}
+                                                %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'}
+                            -if (row == 4 && index == 11 && tile == 13)
+                                .tile.water
+                                    %label{:for => 'interactiveObject14', 'data-reference' => '14'}
+                                        %img.forced{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/waterOn.gif'}
+                                        .forcedResponse
+                                            Cant get through here
+                                            %label{:for => 'interactiveObject14'}
+                                                %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'}
+                            -if (row == 2 && index == 3 && tile == 15)
+                                .tile
+                                    %label{:for => 'interactiveObject15', 'data-reference' => '15'}
+                                        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_161.png'}
+                                        .response
+                                            Dynamite sticks
+                            -if (row == 4 && index == 12 && tile == 15)
+                                .tile
+                                    %label{:for => 'interactiveObject16', 'data-reference' => '16'}
+                                        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_094.png'}
+                                        .response
+                                            Box of fuses
+                            -if (row == 2 && index == 12 && tile == 15)
+                                .tile
+                                    %label{:for => 'interactiveObject17', 'data-reference' => '17'}
+                                        %img.forced{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_168.png'}
+                                        .forcedResponse
+                                            If only i had some dynamite &amp; fuses
+                                            %label{:for => 'interactiveObject17'}
+                                                %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'}
+                            -if (row == 2 && index == 7 && tile == 15)
+                                .tile
+                                    %label{:for => 'interactiveObject18', 'data-reference' => '18'}
+                                        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-24.png'}
+                                        .response
+                                            Nothing useful in here
+                            -if (row == 2 && index == 10 && tile == 15)
+                                .tile
+                                    %label{:for => 'interactiveObject19', 'data-reference' => '19'}
+                                        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_094.png'}
+                                        .response
+                                            Full of junk
+                            -if (row == 3 && index == 9 && tile == 15)
+                                .tile
+                                    %label{:for => 'interactiveObject20', 'data-reference' => '20'}
+                                        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-24.png'}
+                                        .response
+                                            Just an empty box
+                            -if (row == 1 && index == 12 && tile == 13)
+                                .tile
+                                    %label{:for => 'interactiveObject21', 'data-reference' => '21'}
+                                        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-25.png'}
+                                        .response
+                                            Nothing i can use
+                            -if (row == 4 && index == 8 && tile == 13)
+                                .tile
+                                    %label{:for => 'interactiveObject22', 'data-reference' => '22'}
+                                        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_094.png'}
+                                        .response
+                                            Nope empty
+                            .tile
+                    %label{:for => "indexRow#{row}-#{index}"}
+                        .game_segment__control
+                            -if (index != 1)
+                                .forward
+                                    %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'}
+                            -if (index != columns)
+                                .backward
+                                    %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'}
+                    %label{:for => "indexRow#{row}-#{index}"}
+                        .game_segment__control
+                            .down
+                                %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'}
+                    %label{:for => "indexRow#{row - 1}-#{index}"}
+                        .game_segment__control
+                            .up
+                                %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'}
+    
+    -# Game inventory
+    .game_inventory
+        %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyBackpack.png'}
+        .game_inventory__item
+            .item.pickaxe{'data-reference' => '0'}
+                %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/apple.gif'}
+                .details A healthy snack
+                .name Apple
+            .item.pickaxe{'data-reference' => '2'}
+                %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/pickInventory.gif'}
+                .details A sturdy looking pickaxe
+                .name Pickaxe
+            .item.pickaxe{'data-reference' => '6'}
+                %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/plankInventory.gif'}
+                .details A thick plank of wood
+                .name Plank
+            .item.pickaxe{'data-reference' => '8'}
+                %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/note1.gif'}
+                .details A mysterious note
+                .name Note 1
+            .item.pickaxe{'data-reference' => '9'}
+                %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/note2.gif'}
+                .details A mysterious note
+                .name Note 2
+            .item.pickaxe{'data-reference' => '10'}
+                %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/note3.gif'}
+                .details A mysterious note
+                .name Note 3
+            .item.pickaxe{'data-reference' => '12'}
+                %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/handleInventory.gif'}
+                .details Looks like its used to turn something
+                .name Handle
+            .item.pickaxe{'data-reference' => '15'}
+                %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/dynamiteInventory.gif'}
+                .details No good without any fuses
+                .name Dynamite sticks
+            .item.pickaxe{'data-reference' => '16'}
+                %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/fusesInventory.gif'}
+                .details Some fuses for dynamite
+                .name Fuses
+    -# Game conditional checks 
+    .game_win
+        .game_win__inner
+            .character
+            %p Thanks for playing
+            %a{:href => 'https://www.codepen.io/jcoulterdesign', :target => '_blank'} Follow me on codepen
+            %span for more shenanigans 
