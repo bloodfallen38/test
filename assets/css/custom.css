@@ -42,7 +42,7 @@ svg {
   margin: auto;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  width: 550px;
+  width: 50px;
 }
 .mask-path {
   stroke: white;
