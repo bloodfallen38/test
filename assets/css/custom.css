@@ -1,174 +1,558 @@
 
-HTML,
-BODY {
-  height: 100%;
+$fullcodes: '6543', '1324', '4135', '5614';
+$codes: '6' '5' '4' '3', '1' '3' '2' '4', '4' '1' '3' '5', '5' '6' '1' '4';
+$rounds: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+$num-rounds: 10;
+$slots: 1, 2, 3, 4;
+$color-number: 1, 2, 3, 4, 5, 6;
+$colors: '#7dd', '#096', '#f40', '#ee0', '#eee', '#d49';
+$color-letters: 'B', 'G', 'O', 'Y', 'W', 'P';
+$board-primary: #de8f65;
+$board-secondary: #5ccfa0;
+
+* {
+  font-family: Roboto, Arial, sans-serif;
 }
 
-BODY {
-  background: repeating-linear-gradient(-45deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02) .5em, rgba(255,255,255,0) .5em, rgba(255,255,255,0) 1em),
-    radial-gradient(hsl(200,100%,70%), hsl(220,100%,20%))
-    ;
-  background-size: cover;
-  font: 20px/0 Georgia, serif;
-  }
-INPUT {
-  display: none;
-  }
-
-.board {
+input:not([type=reset]) {
   position: absolute;
-  width: 20em;
-  height: 22em;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border: 1px solid hsl(20, 40%, 20%);
-  background: url(https://img-fotki.yandex.ru/get/9509/5091629.99/0_7d2a0_19c2b714_XL.jpg) 0 center;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.3),
-              0 0 1em hsla(20, 40%, 30%, .8) inset,
-              0 0 0 .2em hsla(20, 50%, 30%, .2) inset;
-  }
+  left: -10000em;
+}
 
-.board-inner {
-  position: absolute;
-  top: 3em;
-  right: 1em;
-  bottom: 1em;
-  left: 1em;
-  border: .1em solid hsla(22, 28%, 50%,.6);
-  background: linear-gradient(hsla(20, 40%, 30%,.4) .1em, hsla(20, 40%, 30%,0) 2px) repeat,
-    linear-gradient(90deg,hsla(20, 40%, 30%,.4) .1em, hsla(20, 40%, 30%,0) 2px) repeat;
-  background-size: 1em 1em;
-  background-position: -.1em -.1em;
-  }
-  .board-inner:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 2.8em;
-    left: 2.8em;
-    width: .3em;
-    height: .3em;
-    border-radius: 50%;
-    background: hsla(25, 50%, 30%, .7);
-    box-shadow: 6em 0 hsla(25, 50%, 30%, .7),
-                12em 0 hsla(25, 50%, 30%, .7),
-                0 6em hsla(25, 50%, 30%, .7),
-                6em 6em hsla(25, 50%, 30%, .7),
-                12em 6em hsla(25, 50%, 30%, .7),
-                0 12em hsla(25, 50%, 30%, .7),
-                6em 12em hsla(25, 50%, 30%, .7),
-                12em 12em hsla(25, 50%, 30%, .7)
-    }
-.wrapper-labels {
-  position: absolute;
-  z-index: 1;
-  top: .5em;
-  right: .5em;
-  bottom: .5em;
-  left: .5em;
-  }
-LABEL {
-  display: inline-block;
-  width: 0px;
-  height: 0px;
-  }
-
-  LABEL DIV {
-    width: 17em;
-    height: 17em;
-    }
-.show-next {
-  display: block;
-  position: absolute;
-  width: 3em;
-  height: 1.7em;
-  overflow: hidden;
-  top: -2.89em;
-  left: -1.5em;
-  right: -1.5em;
-  margin: auto;
-  border-radius: 1.5em;
-  box-shadow: 0 0 0 .2em hsla(20, 50%, 30%, .2),
-    0 0 .15em .1em hsla(25, 50%, 30%, .8) inset;
-  box-sizing: border-box;
-    }
-
-  .show-next:before,
-  .show-next:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -.45em;
-    bottom: -.45em;
-    width: 0em;
-    height: 0em;
-    margin: auto;
-    border-radius: 50%;
-    background-position: -.1em  -.1em ;
-    box-shadow: 0 0 3px hsla(50, 60%, 40%,.7) inset,
-                .05em .05em .1em rgba(0,0,0,0.6); 
-    transition: .3s;
-    }
-
-    .show-next:before {
-      left: -.45em;
-      right: .65em;
-      }
-    .show-next:after {
-      left: .65em;
-      right: -.45em;
-      }
-
-    :not(:checked) + :not(:checked) ~ .show-next:before,
-    :checked + INPUT ~ .show-next:before,
-    INPUT + :checked ~ .show-next:after{
-      width: .9em;
-      height: .9em;
-      }
-
-SPAN {
-  display: inline-block;
-  position: relative;
-  width: 1em;
-  height: 1em;
+html {
+  display: table-row;
   margin: 0;
-  cursor: pointer;
-  }
-  INPUT + :checked ~ .set1 SPAN {
-    z-index: 2;
-    }
-  SPAN:before {
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+p {
+  font-weight: 300;
+}
+
+.won, 
+.lost,
+.won:is(:visible) ~ .popup { 
+  display: none; 
+}
+
+#round-#{$num-rounds + 1}:checked ~ .lost {
+  display: flex;
+}
+
+#board {
+  position: relative;
+  width: 380px;
+  overflow: visible;
+  margin: 35px auto;
+  display: block;
+  padding: 80px 0;
+  background: #{$board-primary};
+  border-radius: 15px;
+  box-shadow: inset 1px 1px 3px #{$board-primary}, inset -4px 2px 8px -2px rgba(0,0,0,0.15), inset 4px 4px 8px rgba(255,255,255,0.35), inset -4px -4px 8px -2px rgba(0,0,0,0.15), inset 4px 0 8px -2px rgba(255,255,255,0.35);
+
+  &::before {
     content: "";
-    color: red;
     display: block;
     position: absolute;
-    top: -1em;
-    right: -1em;
-    bottom: -1em;
-    left: -1em;
-    width: 0.8em;
-    height: 0.8em;
-    margin: auto;
+    bottom: 0px;
+    left: 50px;
+    width: 180px;
+    height: 60px;
+    background: #{$board-secondary};
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0, 0.2);
+    border-radius: 3px 3px 1px 1px;
+    box-shadow: inset 0 -4px 6px rgba(0,0,0,0.15), inset 1px 1px rgba(255,255,255,0.3), inset -1px 1px rgba(255,255,255,0.3);
+  }
+}
+
+#color-blind-label {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
     border-radius: 50%;
-    box-shadow: 0 0 3px hsla(50, 60%, 40%,.7) inset,
-                .05em .05em .1em rgba(0,0,0,0.6);
-    opacity: 0;
-    transition: opacity 100000s;
+    border: 2px solid #369;
+    vertical-align: bottom;
+    margin-right: 0.25em;
+    box-shadow: inset 0 0 0 9in #fff;
+  }
+}
+
+#color-blind:checked + label::before {
+  box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 9in #369;
+}
+
+#mastermind {
+  margin: 0;
+  padding: 0;
+  width: 520px;
+  height:100px;
+  position: absolute;
+  right: 0;
+  top: -20px;
+  transform: rotate(-90deg);
+  transform-origin: bottom right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: lighten($board-secondary, 2.5%);
+  text-shadow: 1px -1px 1px rgba(255,255,255,0.4), -1px 1px 1px rgba(0,0,0,0.3);
+  box-sizing: border-box;
+  background: linear-gradient(45deg, #{$board-secondary}, darken($board-secondary, 5%));
+  border: 1px solid rgba(0,0,0, 0.2);
+  border-bottom: 0;
+  border-radius: 3px 3px 1px 1px;
+  box-shadow: inset 0 -4px 6px rgba(0,0,0,0.15), inset 1px 1px rgba(255,255,255,0.3), inset -1px 1px rgba(255,255,255,0.3);
+
+  &::before, &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 77px;
+    right: -5px;
+    width: 5px;
+    height: 15px;
+    background: rgba(0,0,0,0.35);
+    border-radius: 0 2px 2px 0;
+    box-shadow: inset -1px 0 2px rgba(0,0,0,0.25);
+  }
+
+  &::after {
+    right: auto;
+    left: -5px;
+    border-radius:  2px 0 0 2px;
+    box-shadow: inset -1px 0 2px rgba(0,0,0,0.25);
+  }
+}
+
+// confetti effect based on Fionna's https://codepen.io/fionnachan/pen/EvaqOB
+#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  pointer-events: none;
+  z-index: 3;
+
+  .confetti {
+    position: absolute;
+  }
+}
+
+@for $i from 1 through 99 {
+  $w: random(12);
+  $l: random(100);
+  .confetti-#{$i} {
+    width: #{$w}px;
+    height: #{$w*0.6}px;
+    background-color: #{nth($colors, random(6))};
+    top: -10%;
+    left: unquote($l+"%");
+    opacity: random() + 0.5;
+    transform: rotate(#{random()*360}deg);
+    animation: drop-#{$i} unquote(4+random()+"s") unquote(random()+"s") infinite;
+    animation-delay: -#{random()*10}s;
+  }
+
+  @keyframes drop-#{$i} {
+    100% {
+      top: 110%;
+      left: unquote($l+random(15)+"%");
     }
-    SPAN:active:before {
-      opacity: 1;
-      transition: opacity 0s;
+  }
+}
+
+.round-container {
+  border-bottom: 1px solid darken($board-primary, 10%);
+  border-top: 1px solid lighten($board-primary, 10%);
+  padding: 5px 10px;
+  position: relative;
+  width: 260px;
+  height: 40px;
+
+  &.round-1 {
+    border-top: 1px solid darken($board-primary, 10%);
+    box-shadow: inset 0 1px lighten($board-primary, 10%);
+  }
+
+  &.round-10 {
+    border-bottom: 1px solid lighten($board-primary, 10%);
+    box-shadow: inset 0 -1px darken($board-primary, 10%);
+  }
+
+  & label {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+    visibility: hidden;
+    pointer-events: none; // the buttons are not clickable
+    float: left;
+    margin-right: 10px;
+    font-size: 12px;
+    color: darken($board-primary, 20%);
+    font-weight: bold;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    position: relative;
+
+    &:hover {
+      color: darken($board-primary, 25%);
+
+      &::before {
+        content:"";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.2);
+        clip-path: polygon(50% 100%, 15% 73%, 37% 73%, 37% 0%, 63% 0%, 63% 73%, 85% 73%);
+      }
+    }
+
+    span {
+      position: relative;
+    }
+  }
+
+  .slot-circle {
+    margin: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    float: left;
+    background: rgba(0,0,0,0.3);
+    box-shadow: inset 3px 3px 3px rgba(0,0,0,0.3), inset -1px -1px 2px rgba(0,0,0,0.125);
+    pointer-events: none;
+  }
+}
+
+.valid {
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+  overflow: hidden;
+  padding-left: 10px;
+  position: relative;
+  boz-sizing: border-box;
+}
+
+[class^=correct], [class^=partial], [class^=empty] {
+  background: #222;
+  display: none;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  float: left;
+  box-sizing: border-box;
+  margin: 2px;
+  box-shadow: inset -1px -1px 0 rgba(0,0,0,1),inset -1px -1px 4px rgba(255,255,255,0.15), inset 1px 1px 0 rgba(255,255,255,0.2), inset 1px 1px 4px rgba(0,0,0,0.2), 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+[class^=empty] {
+  width: 20px;
+  height: 20px;
+  background: rgba(0,0,0,0.4);
+  display: inline-block;
+  margin: 0;
+  border: 4px solid $board-primary;
+  box-shadow: inset 2px 2px 4px rgba(0,0,0,0.3);;
+}
+
+[class^=partial] {
+  background: white;
+  box-shadow: inset -1px -1px 0 rgba(0,0,0,0.1), inset 1px 1px 0 #fff, inset 1px 1px 4px rgba(0,0,0,0.2), 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+#info {
+  width: 24px;
+  height: 24px;
+  background: #369;
+  border-radius: 50%;
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  line-height: 24px;
+  text-align: center;
+  display: inline-block;
+  color: white;
+  font-style: italic;
+  font-family: serif;
+  cursor: pointer;
+
+  &:hover {
+    background: #47a;
+  }
+}
+
+#init {
+  display: flex;
+}
+
+.popup > div {
+  clip-path: polygon(0% 2%, 2% 3%, 0% 0%, 3% 2%, 2% 0%, 50% 1%, 98% 0%, 97% 2%, 100% 0%, 98% 3%, 100% 2%, 99% 50%, 100% 98%, 98% 97%, 100% 100%, 97% 98%, 98% 100%, 50% 99%, 2% 100%, 3% 98%, 0% 100%, 2% 97%, 0% 98%, 1% 50%);
+  max-height: 80vh;
+  overflow: auto;
+}
+
+#init #start-button + label {
+  display: none;
+}
+
+[id^=round-]:checked ~ #init,
+[id^=round-]:checked ~ #init .games,
+[id^=round-]:checked ~ #init #start-button {
+  display: none;
+}
+
+#hideInit:checked + .popup,
+[id^=round-]:checked ~ #init #start-button + label {
+  display: flex;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  background: rgba(0,0,0,0.2);
+  display: none;
+
+  &:target {
+    display: flex;
+  }
+
+  & > div {
+    background: white;
+    padding: 30px;
+    display: inline-block;
+    text-align: left;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: 10px;
+  }
+
+  & label {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+  }
+
+  & h2 {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  & .close {
+    display: inline-block;
+    background: #369;
+    color: white;
+    padding: 5px 15px;
+    text-decoration: none;
+    border-radius: 2px;
+    float: right;
+    margin-top: 10px;
+    white-space: nowrap;
+    height: auto;
+    width: auto;
+
+    &:hover {
+      background: #47a;
+    }
+  }
+}
+
+.games {
+  display:flex; 
+  width: 100%; 
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  & label {
+    width: auto;
+    height: auto; 
+  }
+}
+
+// all the game buttons will have their own ID
+@for $i from 1 through length($fullcodes) {
+  $code: nth($fullcodes, $i);
+  .games label:nth-child(#{$i})::after {
+    content: " #{$i}";
+  }
+  #code-#{$code}:checked ~ #init .games label[for="code-#{$code}"] {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #369;
+  }
+}
+
+label.green-button,
+input.green-button {
+  border: 0;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  border-radius: 2px;
+  padding: 10px 15px;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  background: #0a0;
+  color: white;
+  text-transform: uppercase;
+}
+
+// styling of the code pegs in the selection popup
+// thanks @racascou for the suggestions!
+.color-labels label,
+.round-container a {
+  position: relative;
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    text-shadow: -0.6px -1px 1px rgba(255,255,255,0.4), 1px 0.25px 1px rgba(0,0,0,0.5);
+    padding: 4px;
+    border: 2px dotted rgba(255,255,255,0.15);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+  }
+}
+@each $color in $color-number {
+  .color-labels label:nth-child(#{$color}) {
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.3), inset -1px -1px 1px rgba(0, 0, 0, 0.3), inset 0 0 0 4px #{nth($colors, $color)}, inset 3px 3px 6px rgba(0, 0, 0, 0.3), inset -3px -3px 6px rgba(255, 255, 255, 0.3), 0 0 1px black, 1px 1px 2px black;
+    background: #{nth($colors, $color)};
+
+    &::after {
+      content: "#{nth($color-letters, $color)}";
+      color: #{nth($colors, $color)};
+    }
+  }
+}
+
+#color-blind:not(:checked) ~ #board .color-labels label::after {
+  display: none;
+}
+
+/* Game Logic */
+@each $round in $rounds {
+  // make the buttons clickable only if current round
+  #round-#{$round}:checked ~ div.round-#{$round} {
+    label, a {
+      visibility: visible;
+      pointer-events: auto;
+    }
+  }
+
+  // detect if a correct answer was given and show win messages
+  @each $code in $codes {
+    #code-#{nth($code, 1)}#{nth($code, 2)}#{nth($code, 3)}#{nth($code, 4)}:checked ~ input#completed-#{$round}:checked {
+      + input[name=round]:checked ~ [name^="slot-1"][value="#{nth($code, 1)}"]:checked ~ [name^="slot-2"][value="#{nth($code, 2)}"]:checked ~ [name^="slot-3"][value="#{nth($code, 3)}"]:checked ~ [name^="slot-4"][value="#{nth($code, 4)}"]:checked {
+        ~ .popup {
+          display: none;
+        }
+        ~ .won {
+          display: flex;
+        }
+        ~ #confetti {
+          display: block;
+        }
       }
 
-    .show-next:after,
-    .set1 SPAN:before {
-      background: radial-gradient(white, white .1em, silver .4em);  
+      @each $slot in $slots {
+        // detects each correcta answer and displays the black dot
+        ~ [name="slot-#{$slot}-round-#{$round}"][value="#{nth($code, $slot)}"]:checked ~ .round-container .valid-#{$round} .correct-#{$slot} {
+          display: inline-block;
+        }
+
+        // detetcs partial answers and displays white dot
+        ~ [name="slot-#{$slot}-round-#{$round}"][value="#{nth($code, $slot)}"]:not(:checked) ~ [name^=slot][name$="round-#{$round}"][value="#{nth($code, $slot)}"]:checked ~ .round-container .valid-#{$round},
+        ~ [name^=slot][name$="round-#{$round}"][value="#{nth($code, $slot)}"]:checked ~ [name="slot-#{$slot}-round-#{$round}"][value="#{nth($code, $slot)}"]:not(:checked) ~ .round-container .valid-#{$round} {
+          .partial-#{$slot} {
+            display: inline-block;
+          }
+        }
       }
-    .show-next:before,
-    .set2 SPAN:before {  
-      background: radial-gradient(#333, black .4em);
+    }
+  }
+}
+
+@each $round in $rounds {  
+  #completed-#{$round}:checked + input[name=round]:checked ~ #transition-#{$round} {
+    display: flex;
+  }
+
+  input#completed-#{$round}:checked,
+  input#round-#{$round}:checked {
+    @each $slot in $slots {
+      ~ [name="slot-#{$slot}-round-#{$round}"]:checked ~ .round-container.round-#{$round} .slot-circle:nth-child(#{$slot + 1}) {
+        width: 36px;
+        height: 36px;
+        margin: 2px;
+        border: 0;
       }
+
+      @each $color in $color-number {
+        ~ [name="slot-#{$slot}-round-#{$round}"][value="#{$color}"]:checked ~ .round-container.round-#{$round} .slot-circle:nth-child(#{$slot + 1}) {
+
+          box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.3), inset -1px -1px 1px rgba(0, 0, 0, 0.3), inset 0 0 0 4px #{nth($colors, $color)}, inset 3px 3px 6px rgba(0, 0, 0, 0.3), inset -3px -3px 6px rgba(255, 255, 255, 0.3), 0 0 2px rgba(0,0,0,0.35), 1px 1px 2px rgba(0,0,0,0.5);
+          background: #{nth($colors, $color)};
+
+          #color-blind:checked ~ #board &::after {
+            content: "#{nth($color-letters, $color)}";
+            color: #{nth($colors, $color)};
+          }
+        }
+      }
+    }
+  }
+}
+
 
