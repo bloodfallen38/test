@@ -3,7 +3,6 @@ title: "test"
 order: 4
 in_menu: true
 ---
-<html>
 <head>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="./bycss.css" type="text/css">
