@@ -3,8 +3,6 @@ title: "test"
 order: 4
 in_menu: true
 ---
--# Game grid variablesb
--# Make sure these are reflected in the SASS.
 - rows = 4;
 - columns = 12;
 - tilesPerSegment = 3;
@@ -12,7 +10,7 @@ in_menu: true
 - hasIntro = true;
 - hasLoader = true;
 
--# Game
+
 .game
     -# Loader
     - if(hasLoader == true)
@@ -25,7 +23,7 @@ in_menu: true
                 .bar
                     .bar_inner
                 %span Loading checkboxes...
-    -# Intro
+
     - if(hasIntro == true)
         .game_intro 
             %input#intro-1{:class => 'dialogue', :type => 'radio', :name => 'intro', :checked => 'checked'}
@@ -54,7 +52,7 @@ in_menu: true
             %input#intro-6{:class => 'dialogue', :type => 'radio', :name => 'intro'}
             .overlay
     
-    -# Padlock game
+   
     %input#interactiveObject--lock{:type=> 'checkbox'}
     .padlock
         %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/padlockBig.png'}
@@ -68,7 +66,7 @@ in_menu: true
                     %span{:id => "span-#{col}"} #{10 - i}
     %label.check{:for => 'interactiveObject--lock'} check
     
-    -# Game items
+    
 
     %input#interactiveObject1{:type => 'radio', 'data-reference' => '1', 'data-debug' => "Empty box 1"}
     %input#interactiveObject2{:type => 'radio', 'data-reference' => '2', 'data-debug' => "Pickaxe"}
@@ -93,7 +91,7 @@ in_menu: true
     %input#interactiveObject21{:type => 'radio', 'data-reference' => '21', 'data-debug' => "Empty box 5"}
     %input#interactiveObject22{:type => 'radio', 'data-reference' => '22', 'data-debug' => "Empty box 6"}
     
-    -# Checkboxes for movement
+    
     -(1..rows).each do |row|
         -(1..columns).each do |index|
             - if(row == 1 && index == 2)
@@ -107,7 +105,7 @@ in_menu: true
     -# Game intermediates
     .game_key
     
-    -# Game segments
+   
     .viewport
         %img.level{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/tilemaps.png'}
         -(1..rows).each do |row|
@@ -288,7 +286,6 @@ in_menu: true
                             .up
                                 %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'}
     
-    -# Game inventory
     .game_inventory
         %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyBackpack.png'}
         .game_inventory__item
@@ -328,7 +325,7 @@ in_menu: true
                 %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/fusesInventory.gif'}
                 .details Some fuses for dynamite
                 .name Fuses
-    -# Game conditional checks 
+     
     .game_win
         .game_win__inner
             .character
