@@ -30,19 +30,19 @@ h2 {
 }
 html,
 body {
-  height: 10%;
+  height: 100%;
   background: #f2f2f2;
 }
 svg {
   position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
+  right: 50;
+  bottom: 50;
   left: 0;
   margin: auto;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  width: 50px;
+  width: 200px;
 }
 .mask-path {
   stroke: white;
